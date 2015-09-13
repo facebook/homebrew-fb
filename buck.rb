@@ -5,7 +5,7 @@ class Buck < Formula
   homepage "https://buckbuild.com/"
   head "https://github.com/facebook/buck.git"
 
-  depends_on :java => "1.7"
+  depends_on :java => "1.7+"
   depends_on :ant
 
   def install
