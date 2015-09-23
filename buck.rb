@@ -4,6 +4,15 @@ class Buck < Formula
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
   head "https://github.com/facebook/buck.git"
+  version "2015.09.21.01"
+  url "https://github.com/facebook/buck/archive/v2015.09.21.01.tar.gz"
+  sha256 "4de57e92910078a669dd8d13e52aadf23042f2be8ae96d3a5268b5a201d7abdc"
+
+  bottle do
+    root_url "https://github.com/facebook/buck/releases/download/v2015.09.21.01"
+    cellar :any_skip_relocation
+    sha256 "1444dbf520bd712104089737cf110046d743940a7c89ee68cfe97f99a264870f" => :yosemite_or_later
+  end
 
   depends_on :java => "1.7+"
   depends_on :ant
