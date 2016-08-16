@@ -1,15 +1,15 @@
 class Fbsimctl < Formula
   desc "A Powerful Command Line for Managing iOS Simulators"
   homepage "https://github.com/facebook/FBSimulatorControl/fbsimctl/README.md"
-  url "https://github.com/facebook/FBSimulatorControl/tarball/v0.1.0"
-  sha256 "8e3e74cd816185ca4328618931aff879ae0050f1740393214dfef943fcda109e"
+  url "https://github.com/facebook/FBSimulatorControl/tarball/v0.1.1"
+  sha256 "f971c28898457cc21d48542ddf6d269ee931190d702fe07083f4d2cddcb11fc4"
   head "https://github.com/facebook/FBSimulatorControl.git"
   
   depends_on "carthage"
   depends_on :xcode => ["7", :build]
 
   def install
-    system "./build.sh", "cli", "build", "#{libexec}" 
+    system "./build.sh", "fbsimctl", "build", "#{libexec}" 
     bin.install_symlink "#{libexec}/fbsimctl"
   end
 
