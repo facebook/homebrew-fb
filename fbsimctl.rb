@@ -9,8 +9,7 @@ class Fbsimctl < Formula
   depends_on :xcode => ["7", :build]
 
   def install
-    system "./build.sh", "fbsimctl", "build", "#{libexec}"
-    bin.install_symlink "#{libexec}/fbsimctl"
+    system "./build.sh", "fbsimctl", "build", prefix
   end
 
   test do
