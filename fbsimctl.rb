@@ -2,7 +2,7 @@ class Fbsimctl < Formula
   desc "A Powerful Command Line for Managing iOS Simulators"
   homepage "https://github.com/facebook/FBSimulatorControl/fbsimctl/README.md"
   url "https://github.com/facebook/FBSimulatorControl/tarball/v0.1.2"
-  sha256 "fa14cdb4856b5fc10d7dc4416d2532142fbd7833c7ae48e2c4caf2def659376d"
+  sha256 "439d7d03096671d6b1533dc4bf56b22b45772803bfa64060c2869cb21f65ead3"
   head "https://github.com/facebook/FBSimulatorControl.git"
 
   depends_on "carthage"
