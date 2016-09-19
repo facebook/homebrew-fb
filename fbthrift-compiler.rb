@@ -14,6 +14,7 @@ class FbthriftCompiler < Formula
   depends_on "glog"
   depends_on "boost"
   depends_on "folly"
+  depends_on "mstch"
 
   # 1. Thrift's configure.ac conflates the cpp runtime with the compiler. Even
   # if we specify `--without-cpp` to skip the checks for e.g. numa which isn't
