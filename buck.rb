@@ -15,7 +15,7 @@ class Buck < Formula
     sha256 "2b10373e16e0d72745ccea8b8e7cceed19c477308b94750447ed5c6f06426540" => :yosemite_or_later
   end
 
-  depends_on :java => "1.7+"
+  depends_on :java => "1.8+"
   depends_on :ant
 
   def install
