@@ -42,7 +42,9 @@ class FbthriftCompiler < Formula
           "--disable-silent-rules",
           "--prefix=#{prefix}",
           "--without-python", # see patch comment above
-          "--without-cpp" # see patch comment above
+          "--without-cpp", # see patch comment above
+          "--with-boost=#{HOMEBREW_PREFIX}",
+          "--with-folly=#{HOMEBREW_PREFIX}"
 
       system "make", "install"
     end
