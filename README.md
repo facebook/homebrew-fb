@@ -42,7 +42,7 @@ To upgrade software:
 Contributing
 ------------
 
-We use GitHub's [issue tracker][issue] for bug reports or feature requests.
+Please file bug reports and feature requests as GitHub issues against the individual project, not this repository - however, we do accept pull requests here.
 
 To do development on these formulae, first fork the repository on GitHub. Add
 your fork as a remote to your local clone:
@@ -86,7 +86,6 @@ References
 `brew help`, `man brew`, or the Homebrew [documentation][].
 
 [brew]: http://brew.sh/
-[issue]: https://github.com/facebook/homebrew-fb/issues
 [cla]: https://code.facebook.com/cla
 [style]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Formula-Cookbook.md
 [documentation]: https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme
