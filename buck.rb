@@ -1,18 +1,18 @@
 require "open3"
 
 class Buck < Formula
-  @@buck_version = "2017.03.29.01"
+  @@buck_version = "2017.05.02.01"
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
   head "https://github.com/facebook/buck.git"
   version @@buck_version
-  url "https://api.github.com/repos/facebook/buck/tarball/v2017.03.29.01"
-  sha256 "e29616ca17c1b407ddb78c7500697eb0fc02ee8dad6a726c869ae7443cb3f657"
+  url "https://api.github.com/repos/facebook/buck/tarball/v2017.05.02.01"
+  sha256 "a1e80045c13471c554d7829fccd4f0c5f672c53135885ed86d4494abfb2f920e"
 
   bottle do
     root_url "https://github.com/facebook/buck/releases/download/v#{@@buck_version}"
     cellar :any_skip_relocation
-    sha256 "9d67651a7a75191d99b8594ac8afb5bade9724ae52f8774ba85fa6707e31a50e" => :yosemite_or_later
+    sha256 "6484d7d7cf20956b90417b8f205ea597fd69657c5a5812e09c0b35899aa2a59c" => :yosemite_or_later
   end
 
   depends_on :java => "1.8+"
