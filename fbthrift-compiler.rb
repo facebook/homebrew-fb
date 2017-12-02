@@ -1,9 +1,9 @@
 class FbthriftCompiler < Formula
   desc "IDL compiler from Facebook's Thrift, an RPC system"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://github.com/facebook/fbthrift/archive/v0.31.0.tar.gz"
-  version "31.0"
-  sha256 "1910b85e808e1db92668af36656fe68e7bc780345aee6a5985bd193d5e8a2f4a"
+  url "https://github.com/facebook/fbthrift/archive/v2017.10.30.00.tar.gz"
+  version "2017.10.30.00"
+  sha256 "c945e539af960db2ccbe888e5af58791950bf3116b5cffd7ef45ef8d266d7c62"
 
   head "https://github.com/facebook/fbthrift.git"
 
@@ -71,25 +71,25 @@ class FbthriftCompiler < Formula
 end
 
 __END__
---- a/thrift/Makefile.am	2014-10-10 14:54:23.000000000 -0700
-+++ b/thrift/Makefile.am	2014-10-10 14:54:27.000000000 -0700
+--- a/thrift/Makefile.am
++++ b/thrift/Makefile.am
 @@ -19,7 +19,7 @@
- 
+
  ACLOCAL_AMFLAGS = -I m4
- 
+
 -SUBDIRS = compiler lib
 +SUBDIRS = compiler
- 
- 
+
+
  dist-hook:
---- a/thrift/compiler/Makefile.am	2014-10-10 14:39:43.000000000 -0700
-+++ b/thrift/compiler/Makefile.am	2014-10-10 14:39:52.000000000 -0700
-@@ -25,8 +25,6 @@
+--- a/thrift/compiler/Makefile.am
++++ b/thrift/compiler/Makefile.am
+@@ -25,8 +25,6 @@ AM_YFLAGS = -d
  LIBS =
  BUILT_SOURCES =
- 
+
 -SUBDIRS = . py
 -
  bin_PROGRAMS = thrift1
- 
+
  noinst_LTLIBRARIES = libparse.la libthriftcompilerbase.la
