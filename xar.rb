@@ -7,7 +7,7 @@ class Xar < Formula
 
   depends_on "cmake" => :build
   depends_on :osxfuse
-  depends_on "squashfuse"
+  depends_on "squashfs"
 
   def install
     system "cmake", ".", *std_cmake_args
