@@ -2,7 +2,7 @@ require "open3"
 
 class Buck < Formula
   @@buck_version = "2018.03.26.01"
-  @@buck_release_time = "1522099141"
+  @@buck_release_timestamp = "1522099141"
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
   head "https://github.com/facebook/buck.git"
@@ -20,8 +20,6 @@ class Buck < Formula
   depends_on "ant"
 
   def install
-    ENV["BUCK_RELEASE"] = @@buck_version
-    ENV["BUCK_RELEASE_TIMESTAMP"] = @@buck_release_time
     # First, bootstrap the build by building Buck with Apache Ant.
     ohai "Bootstrapping buck with ant"
     system "ant"
@@ -30,7 +28,16 @@ class Buck < Formula
     # Now, build the Buck PEX archive with the Buck bootstrap.
     ohai "Building buck with buck"
     mkdir_p "#{bin}"
-    system "./bin/buck", "build", "buck", "--out", "#{bin}/buck"
+    system(
+      "./bin/buck",
+      "build",
+      "-c",
+      "buck.release_version=#{@@buck_version}",
+      "-c",
+      "buck.release_timestamp=#{@@buck_release_timestamp}",
+      "--out",
+      "#{bin}/buck",
+      "buck")
   end
 
   test do
