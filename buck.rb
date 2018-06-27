@@ -2,6 +2,7 @@ require "open3"
 
 class Buck < Formula
   @@buck_version = "2018.03.26.01"
+  @@buck_release_time = "1522099141"
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
   head "https://github.com/facebook/buck.git"
@@ -19,24 +20,17 @@ class Buck < Formula
   depends_on "ant"
 
   def install
+    ENV["BUCK_RELEASE"] = @@buck_version
+    ENV["BUCK_RELEASE_TIMESTAMP"] = @@buck_release_time
     # First, bootstrap the build by building Buck with Apache Ant.
+    ohai "Bootstrapping buck with ant"
     system "ant"
     # Mark the build as successful.
     File.open("build/successful-build", "w") {}
     # Now, build the Buck PEX archive with the Buck bootstrap.
-    system "./bin/buck", "build", "buck"
+    ohai "Building buck with buck"
     mkdir_p "#{bin}"
-    ohai "Finding PEX archive..."
-    stdout, stderr, status = Open3.capture3("./bin/buck", "targets", "--show_output", "buck")
-    if status == 0
-      stdout.chomp!
-      _, path = stdout.split(" ", 2)
-      ohai "Installing buck in #{bin}/buck..."
-      cp(path, "#{bin}/buck", :preserve => true)
-      ohai "Done."
-    else
-      onoe "Could not find location of built buck: " + stderr
-    end
+    system "./bin/buck", "build", "buck", "--out", "#{bin}/buck"
   end
 
   test do
