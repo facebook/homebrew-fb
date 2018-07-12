@@ -1,9 +1,8 @@
 class Xar < Formula
   desc "The eXecutable Archive Format"
   homepage "https://github.com/facebookincubator/xar"
-  url "https://github.com/facebookincubator/xar/archive/master.zip"
-  version "0.0.1"
-  sha256 "c94bb886ad9bd91ff3d1a65c58b7954b44b64d84ba2abc133426db93a112b9ef"
+  url "https://github.com/facebookincubator/xar/archive/v18.07.12.tar.gz"
+  sha256 "517414281f02af5c304cb87f08c855e3e5ca812580ff94ff48972d68ec75558d"
 
   depends_on "cmake" => :build
   depends_on :osxfuse
@@ -15,6 +14,6 @@ class Xar < Formula
   end
 
   test do
-    system "xarexec_fuse --help"
+    system "xarexec_fuse", "--help"
   end
 end
