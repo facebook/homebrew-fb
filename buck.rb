@@ -20,11 +20,15 @@ class Buck < Formula
   depends_on "ant"
 
   def install
-    # First, bootstrap the build by building Buck with Apache Ant.
+    # https://github.com/Homebrew/brew/pull/4552 stopped extracting stuff for us
+    if File.exists?("v#{@@buck_version}") then
+      ohai "Homebrew didn't extract the source tarball. Extracting..."
+      system("tar", "--strip-components", "1", "-xf", "v#{@@buck_version}")
+    end
     ohai "Bootstrapping buck with ant"
     system "ant"
     # Mark the build as successful.
-    File.open("build/successful-build", "w") {}
+    File.open("ant-out/successful-build", "w") {}
     # Now, build the Buck PEX archive with the Buck bootstrap.
     ohai "Building buck with buck"
     mkdir_p "#{bin}"
