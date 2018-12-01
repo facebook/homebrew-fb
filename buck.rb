@@ -1,29 +1,28 @@
 require "open3"
 
 class Buck < Formula
-  @@buck_version = "2018.10.29.01"
-  @@buck_release_timestamp = "1540624817"
+  BUCK_VERSION = "2018.10.29.01".freeze
+  BUCK_RELEASE_TIMESTAMP = "1540624817".freeze
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
+  url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
+  sha256 "1e4222463031d9b20e313698022846e980113e4c87334e722691c2a7b19d16e9"
   head "https://github.com/facebook/buck.git"
-  version @@buck_version
-  url "https://api.github.com/repos/facebook/buck/tarball/v2018.10.29.01"
-  sha256 "9d113ebb5d5402b214cef9e67cd4e95bbd709a31e6b0d221895bec9760d8d833"
 
   bottle do
-    root_url "https://github.com/facebook/buck/releases/download/v#{@@buck_version}"
+    root_url "https://github.com/facebook/buck/releases/download/v#{BUCK_VERSION}"
     cellar :any_skip_relocation
     sha256 "2b777c70022440424d82f2fa6c893ba8fb4173971a1efcc40ab14e68558121b0" => :yosemite_or_later
   end
 
-  depends_on :java => "1.8+"
   depends_on "ant"
+  depends_on :java => "1.8+"
 
   def install
     # https://github.com/Homebrew/brew/pull/4552 stopped extracting stuff for us
-    if File.exists?("v#{@@buck_version}") then
+    if File.exist?("v#{version}")
       ohai "Homebrew didn't extract the source tarball. Extracting..."
-      system("tar", "--strip-components", "1", "-xf", "v#{@@buck_version}")
+      system("tar", "--strip-components", "1", "-xf", "v#{version}")
     end
     ohai "Bootstrapping buck with ant"
     system "ant"
@@ -31,17 +30,18 @@ class Buck < Formula
     File.open("ant-out/successful-build", "w") {}
     # Now, build the Buck PEX archive with the Buck bootstrap.
     ohai "Building buck with buck"
-    mkdir_p "#{bin}"
+    mkdir_p bin
     system(
       "./bin/buck",
       "build",
       "-c",
-      "buck.release_version=#{@@buck_version}",
+      "buck.release_version=#{version}",
       "-c",
-      "buck.release_timestamp=#{@@buck_release_timestamp}",
+      "buck.release_timestamp=#{BUCK_RELEASE_TIMESTAMP}",
       "--out",
       "#{bin}/buck",
-      "buck")
+      "buck",
+    )
   end
 
   test do
@@ -50,7 +50,7 @@ class Buck < Formula
     (testpath/"BUCK").write("cxx_binary(name = 'foo', srcs = ['foo.c'])")
     (testpath/"foo.c").write("#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello world!\\n\"); }\n")
     ohai "Building and running C binary..."
-    stdout, stderr, status = Open3.capture3("#{bin}/buck", "run", ":foo")
+    stdout, _, status = Open3.capture3("#{bin}/buck", "run", ":foo")
     stdout.chomp!
     ohai "Got output from binary: " + stdout
     assert_equal 0, status
