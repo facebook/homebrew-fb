@@ -1,5 +1,3 @@
-require "open3"
-
 class Buck < Formula
   BUCK_VERSION = "2018.10.29.01".freeze
   BUCK_RELEASE_TIMESTAMP = "1540624817".freeze
@@ -27,7 +25,7 @@ class Buck < Formula
     ohai "Bootstrapping buck with ant"
     system "ant"
     # Mark the build as successful.
-    File.open("ant-out/successful-build", "w") {}
+    touch "ant-out/successful-build"
     # Now, build the Buck PEX archive with the Buck bootstrap.
     ohai "Building buck with buck"
     mkdir_p bin
@@ -50,10 +48,9 @@ class Buck < Formula
     (testpath/"BUCK").write("cxx_binary(name = 'foo', srcs = ['foo.c'])")
     (testpath/"foo.c").write("#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello world!\\n\"); }\n")
     ohai "Building and running C binary..."
-    stdout, _, status = Open3.capture3("#{bin}/buck", "run", ":foo")
-    stdout.chomp!
+    stdout = shell_output("#{bin}/buck run :foo").chomp
     ohai "Got output from binary: " + stdout
-    assert_equal 0, status
+    assert_equal 0, $CHILD_STATUS.exitstatus
     assert_equal "Hello world!", stdout
     ohai "Test complete."
   end
