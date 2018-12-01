@@ -50,7 +50,6 @@ class Buck < Formula
     ohai "Building and running C binary..."
     stdout = shell_output("#{bin}/buck run :foo").chomp
     ohai "Got output from binary: " + stdout
-    assert_equal 0, $CHILD_STATUS.exitstatus
     assert_equal "Hello world!", stdout
     ohai "Test complete."
   end
