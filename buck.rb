@@ -17,11 +17,7 @@ class Buck < Formula
   depends_on :java => "1.8+"
 
   def install
-    # https://github.com/Homebrew/brew/pull/4552 stopped extracting stuff for us
-    if File.exist?("v#{version}")
-      ohai "Homebrew didn't extract the source tarball. Extracting..."
-      system("tar", "--strip-components", "1", "-xf", "v#{version}")
-    end
+    # First, bootstrap the build by building Buck with Apache Ant.
     ohai "Bootstrapping buck with ant"
     system "ant"
     # Mark the build as successful.
