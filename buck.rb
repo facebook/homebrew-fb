@@ -10,7 +10,7 @@ class Buck < Formula
   bottle do
     root_url "https://github.com/facebook/buck/releases/download/v#{BUCK_VERSION}"
     cellar :any_skip_relocation
-    sha256 "2b777c70022440424d82f2fa6c893ba8fb4173971a1efcc40ab14e68558121b0" => :yosemite_or_later
+    sha256 "2b777c70022440424d82f2fa6c893ba8fb4173971a1efcc40ab14e68558121b0" => :yosemite
   end
 
   depends_on "ant"
