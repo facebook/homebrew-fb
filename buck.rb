@@ -3,7 +3,7 @@ class Buck < Formula
   BUCK_RELEASE_TIMESTAMP = "1547139889".freeze
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
-  url "https://api.github.com/repos/facebook/buck/tarball/v2019.01.10.01"
+  url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
   sha256 "9b0ebbf0c5f4e5d83a6ec4efd319cdd062f1103b92b06b5954fcf142d6de14e7"
   head "https://github.com/facebook/buck.git"
 
