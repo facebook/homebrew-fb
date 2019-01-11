@@ -4,7 +4,7 @@ class Buck < Formula
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
   url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
-  sha256 "9b0ebbf0c5f4e5d83a6ec4efd319cdd062f1103b92b06b5954fcf142d6de14e7"
+  sha256 "5dbfeb1146c7441ec0061f4c0a905014999328c653acd94558eb2af4a4bf2fe1"
   head "https://github.com/facebook/buck.git"
 
   bottle do
