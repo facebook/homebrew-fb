@@ -8,7 +8,7 @@ class IdbCompanion < Formula
   bottle do
     root_url "https://github.com/facebook/idb/releases/download/v1.0.2"
     cellar :any
-    sha256 "942a767be4b3227999660c3202a570eae801aba586eeba704262b16abbc17bb8" => :mojave
+    sha256 "e4141795dc0b030c23cf03990f387e28633f4e8abd0e82e861ceca54b5597198" => :mojave
   end
 
   depends_on :xcode => ["8.2", :build]
