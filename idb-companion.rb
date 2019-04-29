@@ -6,7 +6,7 @@ class IdbCompanion < Formula
   head "https://github.com/facebook/idb.git"
 
   bottle do
-    root_url "https://github.com/facebook/idb/releases/download/1.0.4"
+    root_url "https://github.com/facebook/idb/releases/download/v1.0.4"
     cellar :any
     sha256 "941ef3e83afe3a7840a8d8b59ee97532fbdd907d8c78089f7ccde07e763315db" => :mojave
   end
