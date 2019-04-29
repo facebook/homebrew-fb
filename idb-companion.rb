@@ -1,7 +1,7 @@
 class IdbCompanion < Formula
   desc "A Powerful Command Line for automating iOS Simulators"
   homepage "https://github.com/facebook/idb/README.md"
-  url "https://github.com/facebook/idb/archive/1.0.4.tar.gz"
+  url "https://github.com/facebook/idb/archive/v1.0.4.tar.gz"
   sha256 "a05440e07b42c57f525c971cba569a294d640010d3cc8f7934375600d444175e"
   head "https://github.com/facebook/idb.git"
 
