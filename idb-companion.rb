@@ -17,6 +17,16 @@ class IdbCompanion < Formula
   def install
     system "./idb_build.sh", "idb_companion", "build", prefix
   end
+  
+  def post_install
+    [
+      prefix/'Frameworks/FBDeviceControl.framework/Versions/A/Resources/libShimulator.dylib',
+      prefix/'Frameworks/FBSimulatorControl.framework/Versions/A/Resources/libShimulator.dylib',
+      prefix/'Frameworks/XCTestBootstrap.framework/Versions/A/Resources/libShimulator.dylib',
+    ].each do |shim|
+      system "codesign", "--force", "--sign", "-", "--timestamp=none", shim
+    end
+  end
 
 end
 
