@@ -1,12 +1,12 @@
 class IdbCompanion < Formula
   desc "A Powerful Command Line for automating iOS Simulators"
   homepage "https://github.com/facebook/idb/README.md"
-  url "https://github.com/facebook/idb/archive/v1.0.5.tar.gz"
-  sha256 "125cce6b420ad8cfa351024f0697c97b6c4ba427f4ee83999bf924ff1c82fd25"
+  url "https://github.com/facebook/idb/archive/v1.0.6.tar.gz"
+  sha256 "ba75405900b066e2bea3c40a966bf6458499d9bad7b4c73c9e35025716d8055a"
   head "https://github.com/facebook/idb.git"
 
   bottle do
-    root_url "https://github.com/facebook/idb/releases/download/v1.0.5"
+    root_url "https://github.com/facebook/idb/releases/download/v1.0.6"
     cellar :any
     sha256 "0706e7cbf1c95d0beab26949ead9cbd2a94f3d5306dcbed832a6786804859652" => :mojave
   end
