@@ -12,7 +12,7 @@ class IdbCompanion < Formula
   end
 
   depends_on :xcode => ["8.2", :build]
-  depends_on "grpc" => "1.20.3"
+  depends_on "grpc" => "1.21.3"
 
   def install
     system "./idb_build.sh", "idb_companion", "build", prefix
