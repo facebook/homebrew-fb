@@ -1,16 +1,16 @@
 class Buck < Formula
-  BUCK_VERSION = "2019.06.11.01".freeze
-  BUCK_RELEASE_TIMESTAMP = "1560269334".freeze
+  BUCK_VERSION = "2019.06.17.01".freeze
+  BUCK_RELEASE_TIMESTAMP = "1560829814".freeze
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
   url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
-  sha256 "64a77ec56833d497238a4b7b37f1831f8059148aabd6311348c3ab6d6e72beea"
+  sha256 "6de46b534913b9be584d83044f3df831a73975551edfbbb9770e5f0b4bd58576"
   head "https://github.com/facebook/buck.git"
 
   bottle do
     root_url "https://github.com/facebook/buck/releases/download/v#{BUCK_VERSION}"
     cellar :any_skip_relocation
-    sha256 "8fc4791c286a03427fdf9864ae5496a34121cbee75770fa866a270c4cbcc0c52" => :yosemite
+    sha256 "bb2a9a58d0d782bdec1ed160135f909dc41254b3764a04462d11837802a17a78" => :yosemite
   end
 
   depends_on "ant"
