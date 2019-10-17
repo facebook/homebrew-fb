@@ -14,7 +14,7 @@ class Buck < Formula
   end
 
   depends_on "ant"
-  depends_on :java => "1.8+"
+  depends_on :java => "1.8"
 
   def install
     # First, bootstrap the build by building Buck with Apache Ant.
