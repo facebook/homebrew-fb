@@ -19,7 +19,11 @@ class Buck < Formula
   def install
     # First, bootstrap the build by building Buck with Apache Ant.
     ohai "Bootstrapping buck with ant"
-    system "ant"
+    system(
+      "ant",
+      "-Drelease.version=#{BUCK_VERSION}",
+      "-Drelease.timestamp=#{BUCK_RELEASE_TIMESTAMP}",
+    )
     # Mark the build as successful.
     touch "ant-out/successful-build"
     # Now, build the Buck PEX archive with the Buck bootstrap.
