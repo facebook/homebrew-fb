@@ -29,7 +29,7 @@ class Buck < Formula
       "./bin/buck",
       "build",
       "-c",
-      "buck.release_version=#{version}",
+      "buck.release_version=#{BUCK_VERSION}",
       "-c",
       "buck.release_timestamp=#{BUCK_RELEASE_TIMESTAMP}",
       "--out",
