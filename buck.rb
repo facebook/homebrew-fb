@@ -18,9 +18,11 @@ class Buck < Formula
 
   def install
     # First, bootstrap the build by building Buck with Apache Ant.
-    ohai "Bootstrapping buck with ant"
+    ant_path = `"#{HOMEBREW_PREFIX}"/bin/brew --prefix ant@1.9`
+    ant_1_9 = ant_path.strip + "/bin/ant"
+    ohai "Bootstrapping buck with anti using " + ant_1_9
     system(
-      "ant",
+      ant_1_9,
       "-Drelease.version=#{BUCK_VERSION}",
       "-Drelease.timestamp=#{BUCK_RELEASE_TIMESTAMP}",
     )
