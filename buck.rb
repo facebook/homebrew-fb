@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 class Buck < Formula
-  BUCK_VERSION = "2020.05.14.01"
-  BUCK_RELEASE_TIMESTAMP = "1589509938"
+  BUCK_VERSION = "2020.06.29.01"
+  BUCK_RELEASE_TIMESTAMP = "1593441972"
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
   url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
-  sha256 "444eb05ed2771103a866d6129db3fcfc515f1575d003edd6cc9bae43975dd387"
+  sha256 "d76964cd50029ac06d52dc31321e8477c47cb19b90a8b432bb3efdbb66fbcd88"
   head "https://github.com/facebook/buck.git"
 
   bottle do
     root_url "https://github.com/facebook/buck/releases/download/v#{BUCK_VERSION}"
     cellar :any_skip_relocation
-    sha256 "468c783286058abb9170fb954c88001958a8cd6fa54f47a03541bec559c359bd" => :yosemite
+    sha256 "c8d295aa5e603d4bd9e4c4fcc99be002b33f6dc9df4169c342f4cd87ffb41fc2" => :yosemite
   end
 
   depends_on "ant@1.9"
@@ -20,9 +20,11 @@ class Buck < Formula
 
   def install
     # First, bootstrap the build by building Buck with Apache Ant.
-    ohai "Bootstrapping buck with ant"
+    ant_path = `"#{HOMEBREW_PREFIX}"/bin/brew --prefix ant@1.9`
+    ant_1_9 = ant_path.strip + "/bin/ant"
+    ohai "Bootstrapping buck with anti using " + ant_1_9
     system(
-      "ant",
+      ant_1_9,
       "-Drelease.version=#{BUCK_VERSION}",
       "-Drelease.timestamp=#{BUCK_RELEASE_TIMESTAMP}",
     )
