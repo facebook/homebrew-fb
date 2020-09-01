@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Buck < Formula
-  BUCK_VERSION = "2020.06.29.01".freeze
-  BUCK_RELEASE_TIMESTAMP = "1593441972".freeze
+  BUCK_VERSION = "2020.06.29.01"
+  BUCK_RELEASE_TIMESTAMP = "1593441972"
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
   url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
@@ -14,7 +16,7 @@ class Buck < Formula
   end
 
   depends_on "ant@1.9"
-  depends_on :java => "1.8"
+  depends_on java: "1.8"
 
   def install
     # First, bootstrap the build by building Buck with Apache Ant.
