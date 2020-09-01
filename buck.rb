@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 class Buck < Formula
-  BUCK_VERSION = "2020.06.29.01"
-  BUCK_RELEASE_TIMESTAMP = "1593441972"
+  BUCK_VERSION = "2020.09.09.01"
+  BUCK_RELEASE_TIMESTAMP = "1598982071"
   desc "The Buck build system"
   homepage "https://buckbuild.com/"
   url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
-  sha256 "d76964cd50029ac06d52dc31321e8477c47cb19b90a8b432bb3efdbb66fbcd88"
+  sha256 "7b59afceaae51354fe3d2b01dd884d9014103abe45129b9ba902bc3ae3692728"
   head "https://github.com/facebook/buck.git"
 
   bottle do
     root_url "https://github.com/facebook/buck/releases/download/v#{BUCK_VERSION}"
     cellar :any_skip_relocation
-    sha256 "c8d295aa5e603d4bd9e4c4fcc99be002b33f6dc9df4169c342f4cd87ffb41fc2" => :yosemite
+    sha256 "464fac85336616edd135613eb3ebcaba216276ea673fda12695218f736d93753" => :yosemite
   end
 
   depends_on "ant@1.9"
