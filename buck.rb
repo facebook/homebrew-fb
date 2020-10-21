@@ -3,7 +3,7 @@
 class Buck < Formula
   BUCK_VERSION = "2020.09.09.01"
   BUCK_RELEASE_TIMESTAMP = "1598982071"
-  desc "The Buck build system"
+  desc "Facebook's Buck build system"
   homepage "https://buckbuild.com/"
   url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
   sha256 "7b59afceaae51354fe3d2b01dd884d9014103abe45129b9ba902bc3ae3692728"
