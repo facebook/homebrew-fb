@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Buck < Formula
-  BUCK_VERSION = "2020.10.21.01"
+  BUCK_VERSION = "2020.10.21.01_1"
   BUCK_RELEASE_TIMESTAMP = "1603230110"
   desc "Facebook's Buck build system"
   homepage "https://buckbuild.com/"
