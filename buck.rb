@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 class Buck < Formula
-  BUCK_VERSION = "2020.10.21.01_1"
+  BUCK_VERSION = "2020.10.21.01"
   BUCK_RELEASE_TIMESTAMP = "1603230110"
   desc "Facebook's Buck build system"
   homepage "https://buckbuild.com/"
   url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
   sha256 "b0db2a134c8e11937de9610ed61d80adfde4e68f7661f54749d6340336f04f78"
+  revision 1
   head "https://github.com/facebook/buck.git"
 
   bottle do
