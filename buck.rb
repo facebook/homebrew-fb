@@ -7,6 +7,7 @@ class Buck < Formula
   homepage "https://buckbuild.com/"
   url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
   sha256 "b0db2a134c8e11937de9610ed61d80adfde4e68f7661f54749d6340336f04f78"
+  license "Apache-2.0"
   head "https://github.com/facebook/buck.git"
 
   bottle do
