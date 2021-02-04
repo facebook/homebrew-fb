@@ -5,7 +5,7 @@ class Xar < Formula
   sha256 "517414281f02af5c304cb87f08c855e3e5ca812580ff94ff48972d68ec75558d"
 
   depends_on "cmake" => :build
-  depends_on :osxfuse
+  depends_on "osxfuse"
   depends_on "squashfuse"
 
   def install
