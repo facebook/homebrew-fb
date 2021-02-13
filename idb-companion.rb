@@ -1,3 +1,9 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
 class IdbCompanion < Formula
   desc "A Powerful Command Line for automating iOS Simulators"
   homepage "https://github.com/facebook/idb/README.md"
@@ -17,7 +23,7 @@ class IdbCompanion < Formula
   def install
     system "./idb_build.sh", "idb_companion", "build", prefix
   end
-  
+
   def post_install
     [
       prefix/'Frameworks/FBDeviceControl.framework/Versions/A/Resources/libShimulator.dylib',
