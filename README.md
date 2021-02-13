@@ -89,3 +89,7 @@ References
 [cla]: https://code.facebook.com/cla
 [style]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Formula-Cookbook.md
 [documentation]: https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme
+
+License
+-------
+This project uses BSD 3-Clause License, as found in the [LICENSE](https://github.com/facebook/homebrew-fb/blob/master/LICENSE) file.
