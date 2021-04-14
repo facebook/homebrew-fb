@@ -16,8 +16,7 @@ class IdbCompanion < Formula
 
   bottle do
     root_url "https://github.com/facebook/idb/releases/download/v1.0.14"
-    cellar :any
-    sha256 "b2ee634e7f04179c392217347c2f6cbd3542c2bdb1a113fefa803c3f01f80e53" => :mojave
+    sha256 cellar: :any, mojave: "b2ee634e7f04179c392217347c2f6cbd3542c2bdb1a113fefa803c3f01f80e53"
   end
 
   def install
