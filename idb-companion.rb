@@ -7,17 +7,17 @@
 class IdbCompanion < Formula
   desc "A Powerful Command Line for automating iOS Simulators"
   homepage "https://github.com/facebook/idb/README.md"
-  url "https://github.com/facebook/idb/archive/v1.1.3.tar.gz"
-  sha256 "4cefb5484baf108024c7287720923d796ccd490567a2dc1a3f489d66ac00e90e"
+  url "https://github.com/facebook/idb/archive/v1.1.4.tar.gz"
+  sha256 "aa3556dfa0971ddf4aefe6d95712a6805974a6d4fbb3b25f15d7bfaf22654f2b"
   head "https://github.com/facebook/idb.git"
 
   depends_on :xcode => ["8.2", :build]
   depends_on "cocoapods" => ["1.10", :build]
-  depends_on "grpc" => "1.38.0"
+  depends_on "grpc" => "1.38.1"
 
   bottle do
-    root_url "https://github.com/facebook/idb/releases/download/v1.1.3"
-    sha256 cellar: :any, big_sur: "a7b72a654177de1519165e079c3f057fbea69e9ed8b1a176952ce35ec75729b7"
+    root_url "https://github.com/facebook/idb/releases/download/v1.1.4"
+    sha256 cellar: :any, big_sur: "1559d18a465a7831401536101796582d0b841b8be87451a5ce916cab436ffe49"
   end
 
   def install
