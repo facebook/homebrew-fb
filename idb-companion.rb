@@ -7,17 +7,16 @@
 class IdbCompanion < Formula
   desc "A Powerful Command Line for automating iOS Simulators"
   homepage "https://github.com/facebook/idb/README.md"
-  url "https://github.com/facebook/idb/archive/v1.1.4.tar.gz"
-  sha256 "aa3556dfa0971ddf4aefe6d95712a6805974a6d4fbb3b25f15d7bfaf22654f2b"
+  url "https://github.com/facebook/idb/archive/v1.1.5.tar.gz"
+  sha256 "8b647332de2874fc9e298d77915eadec5748a6d7daf10e2178fff92683b098dd"
   head "https://github.com/facebook/idb.git"
 
   depends_on :xcode => ["8.2", :build]
   depends_on "cocoapods" => ["1.10", :build]
-  depends_on "grpc" => "1.38.1"
 
   bottle do
-    root_url "https://github.com/facebook/idb/releases/download/v1.1.4"
-    sha256 cellar: :any, big_sur: "1559d18a465a7831401536101796582d0b841b8be87451a5ce916cab436ffe49"
+    root_url "https://github.com/facebook/idb/releases/download/v1.1.5"
+    sha256 cellar: :any, big_sur: "2beb957e46a0bbc683ec1f75090159797197cddfcea34f30415c2ebb63c838ad"
   end
 
   def install
@@ -30,6 +29,7 @@ class IdbCompanion < Formula
       prefix/'Frameworks/FBDeviceControl.framework/Versions/A/Resources/libShimulator.dylib',
       prefix/'Frameworks/FBSimulatorControl.framework/Versions/A/Resources/libShimulator.dylib',
       prefix/'Frameworks/XCTestBootstrap.framework/Versions/A/Resources/libShimulator.dylib',
+      prefix/'Frameworks/FBControlCore.framework/Versions/A/Resources/libShimulator.dylib',
     ].each do |shim|
       system "codesign", "--force", "--sign", "-", "--timestamp=none", shim
     end
