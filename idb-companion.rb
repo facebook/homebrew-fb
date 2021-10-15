@@ -10,6 +10,7 @@ class IdbCompanion < Formula
   url "https://github.com/facebook/idb/archive/v1.1.5.tar.gz"
   sha256 "8b647332de2874fc9e298d77915eadec5748a6d7daf10e2178fff92683b098dd"
   head "https://github.com/facebook/idb.git"
+  branch "main"
 
   depends_on :xcode => ["8.2", :build]
   depends_on "cocoapods" => ["1.10", :build]
