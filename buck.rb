@@ -15,7 +15,7 @@ class Buck < Formula
   sha256 "c89e86e8a8355f6bc921afe8218a3cb1138c896a97e3168cf5dd220b07d8d1b5"
   license "Apache-2.0"
   revision 0
-  head "https://github.com/facebook/buck.git"
+  head "https://github.com/facebook/buck.git", branch: "main"
 
   bottle do
     root_url "https://github.com/facebook/buck/releases/download/v#{BUCK_VERSION}"
