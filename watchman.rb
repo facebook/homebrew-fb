@@ -7,8 +7,8 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://github.com/facebook/watchman/releases/download/v2020.08.17.00/watchman-v2020.08.17.00-macos.zip"
-  sha256 "badb94e4ab43e7ea3c6b02e6fb0b0f4d7a2df8a1286088a9226018fce134ba87"
+  url "https://github.com/facebook/watchman/releases/download/v2022.03.21.00/watchman-v2022.03.21.00-macos.zip"
+  sha256 "6c3b47e86a15de55093a6cd1c13243fe7e2066e63c475d82c475382aba9c7e44"
   license "Apache-2.0"
   version_scheme 1
 
