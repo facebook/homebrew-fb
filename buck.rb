@@ -7,12 +7,12 @@
 # frozen_string_literal: true
 
 class Buck < Formula
-  BUCK_VERSION = "2021.01.12.01"
-  BUCK_RELEASE_TIMESTAMP = "1610431978"
+  BUCK_VERSION = "2022.05.05.01"
+  BUCK_RELEASE_TIMESTAMP = "1651780996"
   desc "Facebook's Buck build system"
   homepage "https://buckbuild.com/"
   url "https://github.com/facebook/buck/archive/v#{BUCK_VERSION}.tar.gz"
-  sha256 "c89e86e8a8355f6bc921afe8218a3cb1138c896a97e3168cf5dd220b07d8d1b5"
+  sha256 "f047dd51f0b47f7f57ee329b6c96cdcd8228b1d55be31c563f007e283c16bb07"
   license "Apache-2.0"
   revision 0
   head "https://github.com/facebook/buck.git", branch: "main"
