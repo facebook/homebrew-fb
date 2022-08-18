@@ -19,13 +19,10 @@ class IdbCompanion < Formula
   end
 
   def post_install
-    [
-      prefix/'Frameworks/FBDeviceControl.framework/Versions/A/Resources/libShimulator.dylib',
-      prefix/'Frameworks/FBSimulatorControl.framework/Versions/A/Resources/libShimulator.dylib',
-      prefix/'Frameworks/XCTestBootstrap.framework/Versions/A/Resources/libShimulator.dylib',
-      prefix/'Frameworks/FBControlCore.framework/Versions/A/Resources/libShimulator.dylib',
-    ].each do |shim|
-      system "codesign", "--force", "--sign", "-", "--timestamp=none", shim
+    Dir
+      .glob("#{prefix}/Frameworks/**/*.dsym")
+      .each do |shim|
+        system "codesign", "--force", "--sign", "-", "--timestamp=none", shim
     end
   end
 
