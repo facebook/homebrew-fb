@@ -11,9 +11,9 @@ class Idb < Formula
   # the CLI sdist from the same release rather than the 28MB source tarball --
   # idb-cli already fetches it, so this adds no download of its own for a
   # formula whose own contents are a 25KB README.
-  url "https://github.com/facebook/idb/releases/download/v1.5.0.b1/fb_idb-1.5.0b1.tar.gz"
-  version "1.5.0.b1"
-  sha256 "d258d83c64261f94f9e72fcd20e0e8ff6b56091791e218e59364c3b5fe20c85f"
+  url "https://github.com/facebook/idb/releases/download/v1.5.0.b2/fb_idb-1.5.0b2.tar.gz"
+  version "1.5.0.b2"
+  sha256 "df818980d8c09f652e7aa781bdd093ab3a28b39da7645b020f64f3bcbc716604"
   license "MIT"
 
   # idb is normally used as a pair: the CLI talks to a companion, and the
@@ -42,8 +42,10 @@ class Idb < Formula
   test do
     # Exercise both halves through the dependencies' own prefixes, since this
     # formula installs no executables of its own.
-    assert_match "usage", shell_output("#{Formula["idb-cli"].opt_bin}/idb --help")
-    assert_match "build_date",
-                 shell_output("#{Formula["idb-companion"].opt_bin}/idb_companion --version")
+    cli = formula_opt_bin("idb-cli")
+    companion = formula_opt_bin("idb-companion")
+
+    assert_match "usage", shell_output("#{cli}/idb --help")
+    assert_match "build_date", shell_output("#{companion}/idb_companion --version")
   end
 end

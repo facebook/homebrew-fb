@@ -11,12 +11,12 @@ class IdbCli < Formula
   homepage "https://fbidb.io"
   # Taken from the GitHub release rather than PyPI so the client and the
   # companion stay version-locked. PyPI is not an option regardless: the newest
-  # published fb-idb is 1.1.7 and 1.5.0b1 was never uploaded, pending
-  # trusted-publishing setup for the project.
-  url "https://github.com/facebook/idb/releases/download/v1.5.0.b1/fb_idb-1.5.0b1.tar.gz"
+  # published fb-idb is 1.1.7, from March 2022, and no 1.5.x has been uploaded
+  # at all, pending trusted-publishing setup for the project.
+  url "https://github.com/facebook/idb/releases/download/v1.5.0.b2/fb_idb-1.5.0b2.tar.gz"
   # Kept in the release's own form so all three idb formulae carry one version.
-  version "1.5.0.b1"
-  sha256 "d258d83c64261f94f9e72fcd20e0e8ff6b56091791e218e59364c3b5fe20c85f"
+  version "1.5.0.b2"
+  sha256 "df818980d8c09f652e7aa781bdd093ab3a28b39da7645b020f64f3bcbc716604"
   license "MIT"
 
   depends_on "python@3.14"
@@ -70,10 +70,6 @@ class IdbCli < Formula
   end
 
   def install
-    # setup.py takes the version from the environment and raises without it,
-    # even though the sdist's own PKG-INFO already records it. The release
-    # workflow exports FB_IDB_VERSION the same way before `python -m build`.
-    ENV["FB_IDB_VERSION"] = version.to_s
     virtualenv_install_with_resources
   end
 
