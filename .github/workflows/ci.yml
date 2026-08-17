@@ -1,0 +1,81 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changed-formulae:
+    name: Audit, install and test changed formulae
+    # macos-26 matches the runner idb's own release workflow builds on. It is
+    # also required rather than incidental: idb-companion declares an Xcode
+    # floor, and older images do not carry a new enough Xcode to satisfy it.
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Mount this checkout as the facebook/fb tap
+        run: |
+          tap="$(brew --repository)/Library/Taps/facebook/homebrew-fb"
+          mkdir -p "$(dirname "$tap")"
+          ln -s "$GITHUB_WORKSPACE" "$tap"
+          brew tap-info facebook/fb
+
+      - name: Work out which formulae changed
+        id: changed
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch --no-tags --quiet origin "${{ github.base_ref }}"
+            range="origin/${{ github.base_ref }}...HEAD"
+          else
+            range="${{ github.event.before }}...${{ github.sha }}"
+          fi
+
+          # A force-push or an initial commit can leave the range unresolvable;
+          # fall back to every formula rather than silently checking nothing.
+          if git rev-parse --quiet --verify "${range%%...*}" >/dev/null; then
+            files=$(git diff --name-only --diff-filter=d "$range" -- '*.rb')
+          else
+            echo "Range $range unusable, falling back to all formulae"
+            files=$(ls ./*.rb)
+          fi
+
+          # Empty lines are dropped with sed rather than `grep -v`, which exits
+          # non-zero when it filters everything out -- under `set -o pipefail`
+          # that would fail the step in the ordinary "nothing changed" case.
+          list=$(printf '%s\n' "$files" \
+            | sed 's|.*/||; s|\.rb$||' \
+            | sort -u \
+            | sed '/^$/d; s|^|facebook/fb/|' \
+            | tr '\n' ' ')
+          echo "list=$list" >> "$GITHUB_OUTPUT"
+          echo "Changed formulae: ${list:-<none>}"
+
+      - name: brew audit
+        if: steps.changed.outputs.list != ''
+        run: brew audit --strict --online ${{ steps.changed.outputs.list }}
+
+      - name: brew install
+        if: steps.changed.outputs.list != ''
+        run: brew install ${{ steps.changed.outputs.list }}
+
+      - name: brew test
+        if: steps.changed.outputs.list != ''
+        run: brew test ${{ steps.changed.outputs.list }}
