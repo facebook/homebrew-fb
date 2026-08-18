@@ -46,17 +46,31 @@ class IdbCli < Formula
     sha256 "f630908a00854a7adeabd6382b43923a4c4cd4b821fcb527e6ab9e15382a3b08"
   end
 
+  # multidict and protobuf are the only two dependencies with C extensions, and
+  # building them from the sdist is the whole of this formula's install cost --
+  # a minute of clang on an otherwise instant install. Both publish a pure
+  # Python py3-none-any wheel, which is the one wheel shape Homebrew's resource
+  # handling supports (see Language::Python::Virtualenv), so take those instead
+  # and compile nothing.
+  #
+  # The trade is that both lose their C acceleration, where a plain
+  # `pip install fb-idb` would have picked the binary wheel. For a CLI issuing
+  # gRPC control messages that is not measurable; if a bulk path such as
+  # `idb video-stream` or a large `idb file push` ever shows it, the fix is to
+  # bottle this formula rather than to go back to building on every install.
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/81/08/7036c080d7117f28a4af526d794aab6a84463126db031b007717c1a6676e/multidict-6.7.1-py3-none-any.whl"
+    sha256 "55d97cc6dae627efa6a6e548885712d4864b81110ac76fa4e534c03819fa4a56"
   end
 
   # Pinned deliberately: idb's generated *_pb2.py modules call
   # ValidateProtobufRuntimeVersion(PUBLIC, 7, 35, 1) and refuse to import
-  # against an older runtime.
+  # against an older runtime. Pure Python wheel, per the note above -- the
+  # sdist builds the upb C++ backend, which is the expensive half of the
+  # install.
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/da/01/9ef0afd7999eb9badb3a768b4aedd78c86d4c65cfaf1958ab276199e76b4/protobuf-7.35.1.tar.gz"
-    sha256 "ce115a26fe0c39a2c29973d914d327e516a6455464489fe3cd1e51a1b354f81a"
+    url "https://files.pythonhosted.org/packages/19/c7/5f7c636ec43e0c545e28d1f1db71990108306f7bdcb89f069ba97e428e7f/protobuf-7.35.1-py3-none-any.whl"
+    sha256 "4bc97768d8fe4ad6743c8a19403e314511ed9f6d13205b687e52421c023ac1b9"
   end
 
   resource "six" do
