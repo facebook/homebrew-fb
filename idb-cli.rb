@@ -13,10 +13,10 @@ class IdbCli < Formula
   # companion stay version-locked. PyPI is not an option regardless: the newest
   # published fb-idb is 1.1.7, from March 2022, and no 1.5.x has been uploaded
   # at all, pending trusted-publishing setup for the project.
-  url "https://github.com/facebook/idb/releases/download/v1.5.0.b2/fb_idb-1.5.0b2.tar.gz"
+  url "https://github.com/facebook/idb/releases/download/v1.5.0.b3/fb_idb-1.5.0b3.tar.gz"
   # Kept in the release's own form so all three idb formulae carry one version.
-  version "1.5.0.b2"
-  sha256 "df818980d8c09f652e7aa781bdd093ab3a28b39da7645b020f64f3bcbc716604"
+  version "1.5.0.b3"
+  sha256 "9cc55ea5e44810f9689a129c2504f49566512a1574ea3adb292d6d74fe9d8779"
   license "MIT"
 
   depends_on "python@3.14"
@@ -71,16 +71,6 @@ class IdbCli < Formula
   resource "protobuf" do
     url "https://files.pythonhosted.org/packages/19/c7/5f7c636ec43e0c545e28d1f1db71990108306f7bdcb89f069ba97e428e7f/protobuf-7.35.1-py3-none-any.whl"
     sha256 "4bc97768d8fe4ad6743c8a19403e314511ed9f6d13205b687e52421c023ac1b9"
-  end
-
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
-    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
-  end
-
-  resource "treelib" do
-    url "https://files.pythonhosted.org/packages/7a/31/145bdbee73d7ee4ac4e879c37faa196a32208b288ca4f308c1ad8db3f010/treelib-1.8.0.tar.gz"
-    sha256 "e1be2c6b66ffbfae85079fc4c76fb4909946d01d915ee29ff6795de53aed5d55"
   end
 
   def install

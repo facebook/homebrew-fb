@@ -11,9 +11,9 @@ class Idb < Formula
   # the CLI sdist from the same release rather than the 28MB source tarball --
   # idb-cli already fetches it, so this adds no download of its own for a
   # formula whose own contents are a 25KB README.
-  url "https://github.com/facebook/idb/releases/download/v1.5.0.b2/fb_idb-1.5.0b2.tar.gz"
-  version "1.5.0.b2"
-  sha256 "df818980d8c09f652e7aa781bdd093ab3a28b39da7645b020f64f3bcbc716604"
+  url "https://github.com/facebook/idb/releases/download/v1.5.0.b3/fb_idb-1.5.0b3.tar.gz"
+  version "1.5.0.b3"
+  sha256 "9cc55ea5e44810f9689a129c2504f49566512a1574ea3adb292d6d74fe9d8779"
   license "MIT"
 
   # idb is normally used as a pair: the CLI talks to a companion, and the
