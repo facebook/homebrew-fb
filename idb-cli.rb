@@ -13,13 +13,36 @@ class IdbCli < Formula
   # companion stay version-locked. PyPI is not an option regardless: the newest
   # published fb-idb is 1.1.7, from March 2022, and no 1.5.x has been uploaded
   # at all, pending trusted-publishing setup for the project.
-  url "https://github.com/facebook/idb/releases/download/v1.5.0.b3/fb_idb-1.5.0b3.tar.gz"
+  url "https://github.com/facebook/idb/releases/download/v1.5.0.b3/fb_idb-1.5.0b3-py3-none-any.whl"
   # Kept in the release's own form so all three idb formulae carry one version.
   version "1.5.0.b3"
-  sha256 "9cc55ea5e44810f9689a129c2504f49566512a1574ea3adb292d6d74fe9d8779"
+  sha256 "da570d9be6b51f7bfc6c55fa7f008c1962a75b3da1459b069a3e6a16bfa4078b"
   license "MIT"
 
   depends_on "python@3.14"
+
+  # The wheel, not the sdist, and installed via a resource rather than from
+  # buildpath. Both halves of that need explaining.
+  #
+  # The sdist ships no generated protobuf code: its build_py runs
+  # grpc_tools.protoc over proto/idb.proto at install time. Installing it makes
+  # pip resolve setup_requires in an isolated build environment, which pulls
+  # grpcio-tools, grpcio, setuptools, typing-extensions and a second protobuf
+  # from PyPI -- roughly ten packages this formula never declares, unpinned and
+  # unchecksummed, fetched during `brew install`. The published wheel already
+  # contains idb_pb2.py and idb_grpc.py, so installing it needs no build at all.
+  #
+  # It cannot simply be the main url, though: a wheel is a zip, UnpackStrategy
+  # detects by magic number, and Homebrew would extract it into buildpath,
+  # where pip cannot install it. Resources are the one path that keeps a
+  # py3-none-any wheel as a file (Language::Python::Virtualenv#pip_install
+  # re-appends the basename for exactly this case), so fb-idb is installed from
+  # a resource. The url and sha256 match the main url, so Homebrew downloads
+  # the artifact once.
+  resource "fb-idb" do
+    url "https://github.com/facebook/idb/releases/download/v1.5.0.b3/fb_idb-1.5.0b3-py3-none-any.whl"
+    sha256 "da570d9be6b51f7bfc6c55fa7f008c1962a75b3da1459b069a3e6a16bfa4078b"
+  end
 
   resource "aiofiles" do
     url "https://files.pythonhosted.org/packages/41/c3/534eac40372d8ee36ef40df62ec129bee4fdb5ad9706e58a29be53b2c970/aiofiles-25.1.0.tar.gz"
@@ -74,10 +97,20 @@ class IdbCli < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.14")
+    venv.pip_install resources.reject { |r| r.name == "fb-idb" }
+    venv.pip_install_and_link resource("fb-idb")
   end
 
   test do
     assert_match "usage", shell_output("#{bin}/idb --help")
+
+    # Nothing here should be compiled: fb-idb, multidict and protobuf are all
+    # taken as pure Python wheels so that installing runs no compiler and no
+    # protoc. Assert it, or a well-meaning resource refresh will swap them back
+    # to sdists and quietly restore both the clang step and the unpinned
+    # build-time downloads described above.
+    assert_empty Dir.glob(libexec/"lib/python*/site-packages/**/*.so"),
+                 "expected no compiled extensions in the virtualenv"
   end
 end
