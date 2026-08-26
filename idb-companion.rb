@@ -7,11 +7,11 @@
 class IdbCompanion < Formula
   desc "Companion server for automating iOS Simulators"
   homepage "https://fbidb.io"
-  url "https://github.com/facebook/idb/releases/download/v1.5.0.b4/idb-companion.macos-arm64.tar.gz"
+  url "https://github.com/facebook/idb/releases/download/v1.5.0.b5/idb-companion.macos-arm64.tar.gz"
   # Set explicitly: Homebrew infers "1.5.0" from the URL and silently drops the
   # ".b4" prerelease suffix, which would make a beta look like a final release.
-  version "1.5.0.b4"
-  sha256 "15dae1943f4d13b523abf05d1f7371192b9867c4b6e9649f51ef0e56437ca4b1"
+  version "1.5.0.b5"
+  sha256 "fec7ea5731df4619e9fd60fef433cece657591450c45efd66e5a8d97bfd4efb8"
   license "MIT"
   # Deliberately no `head` spec. Building idb from source through Homebrew has
   # never worked -- see facebook/homebrew-fb issues 73, 75, 77 and 84, spanning
