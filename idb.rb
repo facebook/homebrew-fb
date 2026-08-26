@@ -7,13 +7,14 @@
 class Idb < Formula
   desc "iOS Development Bridge: command-line client and simulator companion"
   homepage "https://fbidb.io"
-  # Metapackage: nothing is built from this, but Homebrew wants a url. Reuse
-  # the CLI sdist from the same release rather than the 28MB source tarball --
-  # idb-cli already fetches it, so this adds no download of its own for a
-  # formula whose own contents are a 25KB README.
-  url "https://github.com/facebook/idb/releases/download/v1.5.0.b3/fb_idb-1.5.0b3.tar.gz"
-  version "1.5.0.b3"
-  sha256 "9cc55ea5e44810f9689a129c2504f49566512a1574ea3adb292d6d74fe9d8779"
+  # Metapackage: nothing is built from this, but Homebrew wants a url. Point it
+  # at the same CLI wheel idb-cli installs, rather than the 28MB source
+  # tarball, so Homebrew dedupes the download and this formula costs nothing of
+  # its own beyond a 25KB README. Keep the url and sha256 in step with
+  # idb-cli.rb or that dedup is silently lost.
+  url "https://github.com/facebook/idb/releases/download/v1.5.0.b4/fb_idb-1.5.0b4-py3-none-any.whl"
+  version "1.5.0.b4"
+  sha256 "c5d39349c5b55bf81289c4250ac93dee263afe7b9a95d5b0da92063f51258507"
   license "MIT"
 
   # idb is normally used as a pair: the CLI talks to a companion, and the
