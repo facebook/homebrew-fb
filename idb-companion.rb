@@ -13,7 +13,14 @@ class IdbCompanion < Formula
   version "1.5.0.b3"
   sha256 "d282ad759b6a21a86a5b5a111c5f1ef33f47ec65e533558c7ef293ccab8194c7"
   license "MIT"
-  head "https://github.com/facebook/idb.git", branch: "main"
+  # Deliberately no `head` spec. Building idb from source through Homebrew has
+  # never worked -- see facebook/homebrew-fb issues 73, 75, 77 and 84, spanning
+  # 2021 to 2026. The immediate blocker is that superenv exports SDKROOT for the
+  # macOS SDK, which overrides the `-sdk iphonesimulator` build.sh passes for
+  # the iOS shims, so they fail on a missing UIKit; behind that, build.sh clones
+  # and builds grpc-swift and lets SwiftPM resolve dependencies, none of it
+  # checksummed. Anyone wanting a source build should clone the repo and run
+  # `./build.sh build all`, which is faster and gives better errors.
 
   # Both are runtime requirements, not build ones: the companion loads
   # CoreSimulator and MobileDevice from the selected developer directory, and
@@ -31,6 +38,14 @@ class IdbCompanion < Formula
     # crashes outright when the shims are absent, so keep the tree intact in
     # libexec and symlink the executables rather than cherry-picking them.
     libexec.install Dir["*"]
+
+    # install_symlink is FileUtils.ln_sf underneath and will happily create a
+    # dangling link, so a layout change would otherwise put a broken
+    # idb_companion on PATH and still report success. Fail here instead.
+    %w[idb_companion idb-repl].each do |exe|
+      odie "#{exe} missing from the staged tree: the layout has changed" unless (libexec/exe).exist?
+    end
+
     bin.install_symlink libexec/"idb_companion"
     bin.install_symlink libexec/"idb-repl"
   end
