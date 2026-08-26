@@ -10,9 +10,11 @@ class IdbCli < Formula
   desc "Command-line client for automating iOS Simulators"
   homepage "https://fbidb.io"
   # Taken from the GitHub release rather than PyPI so the client and the
-  # companion stay version-locked. PyPI is not an option regardless: the newest
-  # published fb-idb is 1.1.7, from March 2022, and no 1.5.x has been uploaded
-  # at all, pending trusted-publishing setup for the project.
+  # companion provably come from one build. Since 1.5.0b3 the release workflow
+  # also publishes to PyPI, and the artifacts are byte-identical -- the wheel
+  # there carries the same sha256 pinned below -- so this is a choice of
+  # provenance rather than availability, and either source would install the
+  # same bytes.
   url "https://github.com/facebook/idb/releases/download/v1.5.0.b3/fb_idb-1.5.0b3-py3-none-any.whl"
   # Kept in the release's own form so all three idb formulae carry one version.
   version "1.5.0.b3"
