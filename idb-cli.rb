@@ -23,7 +23,7 @@ class IdbCli < Formula
 
   bottle do
     root_url "https://github.com/facebook/idb/releases/download/v1.5.0.b5"
-    sha256 cellar: "any_skip_relocation", arm64_tahoe: "30104f1fe9009b75affa6d95c588ffc7572a5d90b83eb12c936f59064de91e8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "30104f1fe9009b75affa6d95c588ffc7572a5d90b83eb12c936f59064de91e8a"
   end
 
   depends_on "python@3.14"
