@@ -43,8 +43,8 @@ class Idb < Formula
   test do
     # Exercise both halves through the dependencies' own prefixes, since this
     # formula installs no executables of its own.
-    cli = formula_opt_bin("idb-cli")
-    companion = formula_opt_bin("idb-companion")
+    cli = Formula["idb-cli"].opt_bin
+    companion = Formula["idb-companion"].opt_bin
 
     assert_match "usage", shell_output("#{cli}/idb --help")
     assert_match "build_date", shell_output("#{companion}/idb_companion --version")
