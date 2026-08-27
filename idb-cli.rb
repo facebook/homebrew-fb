@@ -15,15 +15,15 @@ class IdbCli < Formula
   # there carries the same sha256 pinned below -- so this is a choice of
   # provenance rather than availability, and either source would install the
   # same bytes.
-  url "https://github.com/facebook/idb/releases/download/v1.5.0.b6/fb_idb-1.5.0b6-py3-none-any.whl"
+  url "https://github.com/facebook/idb/releases/download/v1.5.0.b7/fb_idb-1.5.0b7-py3-none-any.whl"
   # Kept in the release's own form so all three idb formulae carry one version.
-  version "1.5.0.b6"
-  sha256 "0aba106d59be860734e38773761209eafb4c291bf27fa82dec32ead90fe923a9"
+  version "1.5.0.b7"
+  sha256 "4b6335fb702091708e2bc12dc220deaea25521602a1ac18a52adbb44501d84ef"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/facebook/idb/releases/download/v1.5.0.b5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "30104f1fe9009b75affa6d95c588ffc7572a5d90b83eb12c936f59064de91e8a"
+    root_url "https://github.com/facebook/idb/releases/download/v1.5.0.b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "55df1661c4d1bbacab3cb5d3b7f1d36cfa822a08d19f6b8116ea15995a3b174d"
   end
 
   depends_on "python@3.14"
@@ -47,8 +47,8 @@ class IdbCli < Formula
   # a resource. The url and sha256 match the main url, so Homebrew downloads
   # the artifact once.
   resource "fb-idb" do
-    url "https://github.com/facebook/idb/releases/download/v1.5.0.b6/fb_idb-1.5.0b6-py3-none-any.whl"
-    sha256 "0aba106d59be860734e38773761209eafb4c291bf27fa82dec32ead90fe923a9"
+    url "https://github.com/facebook/idb/releases/download/v1.5.0.b7/fb_idb-1.5.0b7-py3-none-any.whl"
+    sha256 "4b6335fb702091708e2bc12dc220deaea25521602a1ac18a52adbb44501d84ef"
   end
 
   resource "aiofiles" do
