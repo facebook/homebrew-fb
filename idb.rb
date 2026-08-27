@@ -12,9 +12,9 @@ class Idb < Formula
   # tarball, so Homebrew dedupes the download and this formula costs nothing of
   # its own beyond a 25KB README. Keep the url and sha256 in step with
   # idb-cli.rb or that dedup is silently lost.
-  url "https://github.com/facebook/idb/releases/download/v1.5.0.b7/fb_idb-1.5.0b7-py3-none-any.whl"
-  version "1.5.0.b7"
-  sha256 "4b6335fb702091708e2bc12dc220deaea25521602a1ac18a52adbb44501d84ef"
+  url "https://github.com/facebook/idb/releases/download/v1.5.1/fb_idb-1.5.1-py3-none-any.whl"
+  version "1.5.1"
+  sha256 "66e8f79a78c60c58696c72ee32220491e5107f843d44660f5c7fa471431280b2"
   license "MIT"
 
   # idb is normally used as a pair: the CLI talks to a companion, and the
