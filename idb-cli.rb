@@ -28,24 +28,18 @@ class IdbCli < Formula
 
   depends_on "python@3.14"
 
-  # The wheel, not the sdist, and installed via a resource rather than from
-  # buildpath. Both halves of that need explaining.
+  # The wheel rather than the sdist: the sdist ships no generated protobuf
+  # code and its build_py runs grpc_tools.protoc at install time, which makes
+  # pip resolve setup_requires in an isolated build environment -- roughly ten
+  # undeclared, unpinned packages fetched during `brew install`. The wheel
+  # already contains the generated code, so installing it needs no build.
   #
-  # The sdist ships no generated protobuf code: its build_py runs
-  # grpc_tools.protoc over proto/idb.proto at install time. Installing it makes
-  # pip resolve setup_requires in an isolated build environment, which pulls
-  # grpcio-tools, grpcio, setuptools, typing-extensions and a second protobuf
-  # from PyPI -- roughly ten packages this formula never declares, unpinned and
-  # unchecksummed, fetched during `brew install`. The published wheel already
-  # contains idb_pb2.py and idb_grpc.py, so installing it needs no build at all.
-  #
-  # It cannot simply be the main url, though: a wheel is a zip, UnpackStrategy
-  # detects by magic number, and Homebrew would extract it into buildpath,
-  # where pip cannot install it. Resources are the one path that keeps a
-  # py3-none-any wheel as a file (Language::Python::Virtualenv#pip_install
-  # re-appends the basename for exactly this case), so fb-idb is installed from
-  # a resource. The url and sha256 match the main url, so Homebrew downloads
-  # the artifact once.
+  # Installed via a resource rather than the main url: a wheel is a zip, so
+  # Homebrew would extract the main url into buildpath, where pip cannot
+  # install it. Resources are the one path that keeps a py3-none-any wheel as
+  # a file (Language::Python::Virtualenv#pip_install re-appends the basename
+  # for exactly this case). The url and sha256 match the main url, so
+  # Homebrew downloads the artifact once.
   resource "fb-idb" do
     url "https://github.com/facebook/idb/releases/download/v1.5.1/fb_idb-1.5.1-py3-none-any.whl"
     sha256 "66e8f79a78c60c58696c72ee32220491e5107f843d44660f5c7fa471431280b2"
@@ -76,18 +70,12 @@ class IdbCli < Formula
     sha256 "f630908a00854a7adeabd6382b43923a4c4cd4b821fcb527e6ab9e15382a3b08"
   end
 
-  # multidict and protobuf are the only two dependencies with C extensions, and
-  # building them from the sdist is the whole of this formula's install cost --
-  # a minute of clang on an otherwise instant install. Both publish a pure
-  # Python py3-none-any wheel, which is the one wheel shape Homebrew's resource
-  # handling supports (see Language::Python::Virtualenv), so take those instead
-  # and compile nothing.
-  #
-  # The trade is that both lose their C acceleration, where a plain
-  # `pip install fb-idb` would have picked the binary wheel. For a CLI issuing
-  # gRPC control messages that is not measurable; if a bulk path such as
-  # `idb video-stream` or a large `idb file push` ever shows it, the fix is to
-  # bottle this formula rather than to go back to building on every install.
+  # multidict and protobuf are the only two dependencies with C extensions.
+  # Both are taken as pure Python py3-none-any wheels (the one wheel shape
+  # Homebrew's resource handling supports) so that source installs compile
+  # nothing; bottle installs never run this path at all. The trade is losing
+  # their C acceleration, which is not measurable for a CLI issuing gRPC
+  # control messages.
   resource "multidict" do
     url "https://files.pythonhosted.org/packages/81/08/7036c080d7117f28a4af526d794aab6a84463126db031b007717c1a6676e/multidict-6.7.1-py3-none-any.whl"
     sha256 "55d97cc6dae627efa6a6e548885712d4864b81110ac76fa4e534c03819fa4a56"
