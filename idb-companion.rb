@@ -62,7 +62,8 @@ class IdbCompanion < Formula
     resources = libexec/"Resources"
     assert_path_exists resources/"libShimulator-iOS.dylib"
     assert_path_exists resources/"libRepl-iOS.dylib"
-    assert_path_exists resources/"SimulatorFrameworkBridge"
+    assert_path_exists resources/"SimulatorFrameworkBridge-iOS"
+    assert_path_exists resources/"SimulatorFrameworkBridge-tvOS"
     assert_path_exists resources/"ReplHost.app"
     assert_path_exists resources/"IDBAPI.swiftinterface"
 
