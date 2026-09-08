@@ -8,10 +8,10 @@ class IdbCompanion < Formula
   desc "Companion server for automating iOS Simulators"
   homepage "https://fbidb.io"
   url "https://github.com/facebook/idb/releases/download/v1.5.3/idb-companion.macos-arm64.tar.gz"
-  # Set explicitly: Homebrew infers the version from the URL and silently
-  # drops prerelease suffixes like ".b7", which would make a beta look like a
-  # final release.
-  version "1.5.3"
+  # No explicit `version` on stable tags: it matches what Homebrew scans from
+  # the URL, and `brew audit --strict` rejects the redundancy. A prerelease tag
+  # (v1.5.0.b7) must re-add the stanza, because URL scanning silently drops the
+  # suffix and would make a beta look like a final release.
   sha256 "2a8b20f7339d2c79bae5ff27408fc3c42c17b27032fcaba479f3298d39740f87"
   license "MIT"
   # Deliberately no `head` spec. Building idb from source through Homebrew has
