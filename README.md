@@ -51,7 +51,7 @@ your fork as a remote to your local clone:
     git remote add me git@github.com:YOUR_GITHUB_USERNAME/homebrew-fb.git
     git fetch me
 
-To propose changes, push to your fork (e.g. with `git push me +master`) and
+To propose changes, push to your fork (e.g. with `git push me +main`) and
 submit pull request on GitHub.
 
 If you do not work for Facebook, you will need to [submit a Contributor License
@@ -92,4 +92,4 @@ References
 
 License
 -------
-This project uses BSD 3-Clause License, as found in the [LICENSE](https://github.com/facebook/homebrew-fb/blob/master/LICENSE) file.
+This project uses BSD 3-Clause License, as found in the [LICENSE](https://github.com/facebook/homebrew-fb/blob/main/LICENSE) file.
