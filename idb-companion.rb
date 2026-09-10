@@ -7,12 +7,12 @@
 class IdbCompanion < Formula
   desc "Companion server for automating iOS Simulators"
   homepage "https://fbidb.io"
-  url "https://github.com/facebook/idb/releases/download/v1.5.4/idb-companion.macos-arm64.tar.gz"
+  url "https://github.com/facebook/idb/releases/download/v1.5.5/idb-companion.macos-arm64.tar.gz"
   # No explicit `version` on stable tags: it matches what Homebrew scans from
   # the URL, and `brew audit --strict` rejects the redundancy. A prerelease tag
   # (v1.5.0.b7) must re-add the stanza, because URL scanning silently drops the
   # suffix and would make a beta look like a final release.
-  sha256 "cca3e9eecc08dbf9184818fe5a2a36ac42da189c02d82886add2122dece3b630"
+  sha256 "bd069837edc24b6a245e92fc11237c872bbe8763368d69cbe5132ad6ccf91639"
   license "MIT"
   # Deliberately no `head` spec. Building idb from source through Homebrew has
   # never worked -- see facebook/homebrew-fb issues 73, 75, 77 and 84, spanning
