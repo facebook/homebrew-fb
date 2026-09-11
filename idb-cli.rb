@@ -3,6 +3,8 @@
 #
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
+# Rendered for v1.5.6 from facebook/idb's Source/.github/formulae/idb-cli.rb.in;
+# edit the template, not this file.
 
 class IdbCli < Formula
   include Language::Python::Virtualenv
@@ -15,15 +17,15 @@ class IdbCli < Formula
   # there carries the same sha256 pinned below -- so this is a choice of
   # provenance rather than availability, and either source would install the
   # same bytes.
-  url "https://github.com/facebook/idb/releases/download/v1.5.5/fb_idb-1.5.5-py3-none-any.whl"
+  url "https://github.com/facebook/idb/releases/download/v1.5.6/fb_idb-1.5.6-py3-none-any.whl"
   # Kept in the release's own form so all three idb formulae carry one version.
-  version "1.5.5"
-  sha256 "6438e67956dbd795e0d04212f5eb6911c5ef72af2d8f03a9a496bf74922a50f4"
+  version "1.5.6"
+  sha256 "e28ec0b71840c6e051d8d4253897ea99f3a3f55013742dac302a7be8901ffc45"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/facebook/idb/releases/download/v1.5.5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "83a8af574a99a78b1aafb332a614d2b60d16d5708d29e2bf99359255ba713641"
+    root_url "https://github.com/facebook/idb/releases/download/v1.5.6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "86928b9961207b38b047efa4667caf87d35598525f90689b966dad4fe5e03f96"
   end
 
   depends_on "python@3.14"
@@ -41,8 +43,8 @@ class IdbCli < Formula
   # for exactly this case). The url and sha256 match the main url, so
   # Homebrew downloads the artifact once.
   resource "fb-idb" do
-    url "https://github.com/facebook/idb/releases/download/v1.5.5/fb_idb-1.5.5-py3-none-any.whl"
-    sha256 "6438e67956dbd795e0d04212f5eb6911c5ef72af2d8f03a9a496bf74922a50f4"
+    url "https://github.com/facebook/idb/releases/download/v1.5.6/fb_idb-1.5.6-py3-none-any.whl"
+    sha256 "e28ec0b71840c6e051d8d4253897ea99f3a3f55013742dac302a7be8901ffc45"
   end
 
   resource "aiofiles" do
