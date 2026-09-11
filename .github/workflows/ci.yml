@@ -15,6 +15,11 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Nothing here writes to the repository or its releases; artifacts within a
+# run need no extra permission.
+permissions:
+  contents: read
+
 jobs:
   changed-formulae:
     name: Audit, install and test changed formulae
