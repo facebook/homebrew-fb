@@ -36,6 +36,10 @@ jobs:
           mkdir -p "$(dirname "$tap")"
           ln -s "$GITHUB_WORKSPACE" "$tap"
           brew tap-info facebook/fb
+          # Homebrew trusts only the formulae named on the command line;
+          # dependencies from the same untrusted tap (idb -> idb-cli,
+          # idb-companion) are refused without this.
+          brew trust facebook/fb
 
       - name: Work out which formulae changed
         id: changed
