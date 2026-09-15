@@ -1,0 +1,15 @@
+{
+  "asset_base": "https://github.com/facebook/idb/releases/download/v1.5.7",
+  "bottle_blocks": {
+    "idb-cli.rb": "  bottle do\n    root_url \"https://github.com/facebook/idb/releases/download/v1.5.7\"\n    sha256 cellar: :any_skip_relocation, arm64_tahoe: \"d94a5851560b97b80419f970f36a0a002e51c6e7760ae91e36900a4f78437f2d\"\n  end"
+  },
+  "companion_sha256": "ac4a612b75b29b16c92eb1eae55b72add0b14529d1b58724c99007cb9b0e1afc",
+  "outputs": {
+    "idb-cli.rb": "5ab2b3a87524a0982ae793d734f56d72a5d77856e88294d1f4099582911b7ca3",
+    "idb-companion.rb": "19c93957d74544edce0e23cc9ce34d809bb9c0d9e101d53c7d9f7832009c750a",
+    "idb.rb": "bedc7e6d8636371e165e5ee755d037f85cf3b9abcc5d773e8501423e127e5371"
+  },
+  "run_url": "https://github.com/facebook/idb/actions/runs/34618244380",
+  "tag": "v1.5.7",
+  "wheel_sha256": "ca0b958b714e54cb813e57a016be1c7dc7aa096cb92f019b31bcc930a2555485"
+}
