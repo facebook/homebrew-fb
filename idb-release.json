@@ -1,15 +1,15 @@
 {
-  "asset_base": "https://github.com/facebook/idb/releases/download/v1.6.7",
+  "asset_base": "https://github.com/facebook/idb/releases/download/v1.6.8",
   "bottle_blocks": {
-    "idb-cli.rb": "  bottle do\n    root_url \"https://github.com/facebook/idb/releases/download/v1.6.7\"\n    sha256 cellar: :any_skip_relocation, arm64_tahoe: \"e880b47c317c4858ccf128c4612b84d6c42ac539f26c446d6ccb02b6d83fff2c\"\n  end"
+    "idb-cli.rb": "  bottle do\n    root_url \"https://github.com/facebook/idb/releases/download/v1.6.8\"\n    sha256 cellar: :any_skip_relocation, arm64_tahoe: \"b6ecde6a2bed68106e3effa9ec9bc9e1d1addd31b7af27544c9e3be8690d90a7\"\n  end"
   },
-  "companion_sha256": "644a49879570e05d4e916e2f5398e28495bf3e6baa769dd263ca54a00d23cb93",
+  "companion_sha256": "3d8b47c62092249580db60f32239b3b892f3f9eb24dce8e0194aeb9258322543",
   "outputs": {
-    "idb-cli.rb": "355e6952287f3585bd7f232f19663b26f440ba826af553a3875754d673dedf89",
-    "idb-companion.rb": "c2cdd92d607848f4266c734a23e823c514b2fd6051bc96c179ae0f99f1e9798b",
-    "idb.rb": "0d5b76cbbf6b7456db39b1600cbe53e88ebdfda9d4aa03bebc53d634e6432e09"
+    "idb-cli.rb": "2154b16e78d1b6a381895d316b8f2cf55f350c156b31ec2a9af64b563fafd2b1",
+    "idb-companion.rb": "228423061c452c0ab8efb231b139273aac5f29049aa2d89c447c8be3a8fd928f",
+    "idb.rb": "120d46d16a9ef668d3e631dfcc98dc68354bb0b357c26bf8b7b68af2e8b76f72"
   },
-  "run_url": "https://github.com/facebook/idb/actions/runs/37773727996",
-  "tag": "v1.6.7",
-  "wheel_sha256": "7376c5ed2af999da5f3aa55be605efa1aeee0fea91ce35a2591df4fdf25faf13"
+  "run_url": "https://github.com/facebook/idb/actions/runs/37828957684",
+  "tag": "v1.6.8",
+  "wheel_sha256": "84a32a13633b89dddb1d2ad194b89376a6d0840dd8d5c708ea70927e5dfb8d2a"
 }
