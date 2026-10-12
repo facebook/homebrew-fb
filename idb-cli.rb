@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-# Rendered for v1.6.8 from facebook/idb's Source/.github/formulae/idb-cli.rb.in;
+# Rendered for v1.6.9 from facebook/idb's Source/.github/formulae/idb-cli.rb.in;
 # edit the template, not this file.
 
 class IdbCli < Formula
@@ -18,15 +18,15 @@ class IdbCli < Formula
   # there carries the same sha256 pinned below -- so this is a choice of
   # provenance rather than availability, and either source would install the
   # same bytes.
-  url "https://github.com/facebook/idb/releases/download/v1.6.8/fb_idb-1.6.8-py3-none-any.whl"
+  url "https://github.com/facebook/idb/releases/download/v1.6.9/fb_idb-1.6.9-py3-none-any.whl"
   # Kept in the release's own form so all three idb formulae carry one version.
-  version "1.6.8"
-  sha256 "84a32a13633b89dddb1d2ad194b89376a6d0840dd8d5c708ea70927e5dfb8d2a"
+  version "1.6.9"
+  sha256 "400cbb1be23c407ec151d9eccbd1ed2a750d700dc6ac8dd05b7f25b43e97da17"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/facebook/idb/releases/download/v1.6.8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "b6ecde6a2bed68106e3effa9ec9bc9e1d1addd31b7af27544c9e3be8690d90a7"
+    root_url "https://github.com/facebook/idb/releases/download/v1.6.9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "d5e05db1cdc18195aa278277ff4923e59094d34655205170d5027415f541a0bb"
   end
 
   depends_on "python@3.14"
@@ -44,8 +44,8 @@ class IdbCli < Formula
   # for exactly this case). The url and sha256 match the main url, so
   # Homebrew downloads the artifact once.
   resource "fb-idb" do
-    url "https://github.com/facebook/idb/releases/download/v1.6.8/fb_idb-1.6.8-py3-none-any.whl"
-    sha256 "84a32a13633b89dddb1d2ad194b89376a6d0840dd8d5c708ea70927e5dfb8d2a"
+    url "https://github.com/facebook/idb/releases/download/v1.6.9/fb_idb-1.6.9-py3-none-any.whl"
+    sha256 "400cbb1be23c407ec151d9eccbd1ed2a750d700dc6ac8dd05b7f25b43e97da17"
   end
 
   resource "aiofiles" do

@@ -4,18 +4,18 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-# Rendered for v1.6.8 from facebook/idb's Source/.github/formulae/idb-companion.rb.in;
+# Rendered for v1.6.9 from facebook/idb's Source/.github/formulae/idb-companion.rb.in;
 # edit the template, not this file.
 
 class IdbCompanion < Formula
   desc "Companion server for automating iOS Simulators"
   homepage "https://fbidb.io"
-  url "https://github.com/facebook/idb/releases/download/v1.6.8/idb-companion.macos-arm64.tar.gz"
+  url "https://github.com/facebook/idb/releases/download/v1.6.9/idb-companion.macos-arm64.tar.gz"
   # No explicit `version` on stable tags: it matches what Homebrew scans from
   # the URL, and `brew audit --strict` rejects the redundancy. A prerelease tag
   # (v1.5.0.b7) must re-add the stanza, because URL scanning silently drops the
   # suffix and would make a beta look like a final release.
-  sha256 "3d8b47c62092249580db60f32239b3b892f3f9eb24dce8e0194aeb9258322543"
+  sha256 "4b3ab4a8268dfb3c11d7b4ca929018b39e9ef51151e97f2af68fa2fc111c558b"
   license "MIT"
   # Deliberately no `head` spec. Building idb from source through Homebrew has
   # never worked -- see facebook/homebrew-fb issues 73, 75, 77 and 84, spanning
