@@ -5,9 +5,9 @@
   },
   "companion_sha256": "bfd417f79fd9eec22cd71cbfb1b3bbe3965efd4078f1e7a8bef88b8ec2e192ef",
   "outputs": {
-    "idb-cli.rb": "9e40fff60202e7619d52ac3536445720f48125f13e6628d53dc564c1b23dfb3e",
+    "idb-cli.rb": "4682a3a441d1fa957bec3ddbf9ed50d61c8c790b32adc0510c1da043a1f5d351",
     "idb-companion.rb": "393f00a5512e72fa28268458987a1cf5b08c689fb594e06c29824b5eb50b75fb",
-    "idb.rb": "4cd0b1453a28b8d74d4dd88102701c53843cad28105f351b95d6201f03de67e4"
+    "idb.rb": "64d165cc85b11d832ebeaabda4d967c6767583d6fd39bf0ca99d0f59a3d3beec"
   },
   "run_url": "https://github.com/facebook/idb/actions/runs/38249102146",
   "tag": "v1.6.10",

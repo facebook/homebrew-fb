@@ -19,8 +19,9 @@ class IdbCli < Formula
   # provenance rather than availability, and either source would install the
   # same bytes.
   url "https://github.com/facebook/idb/releases/download/v1.6.10/fb_idb-1.6.10-py3-none-any.whl"
-  # Kept in the release's own form so all three idb formulae carry one version.
-  version "1.6.10"
+  # Only a prerelease spells out its version, in the release's own dotted form
+  # rather than the wheel's PEP 440 one, so all three idb formulae carry one
+  # version. A stable version is the one Homebrew scans from the url.
   sha256 "f6734d1f3dd0509a209934f20ea34b83fa855143689a71ad11bb34e02d943d76"
   license "MIT"
 

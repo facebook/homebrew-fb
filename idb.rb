@@ -16,7 +16,6 @@ class Idb < Formula
   # its own beyond a 25KB README. Keep the url and sha256 in step with
   # idb-cli.rb or that dedup is silently lost.
   url "https://github.com/facebook/idb/releases/download/v1.6.10/fb_idb-1.6.10-py3-none-any.whl"
-  version "1.6.10"
   sha256 "f6734d1f3dd0509a209934f20ea34b83fa855143689a71ad11bb34e02d943d76"
   license "MIT"
 
