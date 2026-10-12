@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-# Rendered for v1.6.9 from facebook/idb's Source/.github/formulae/idb-cli.rb.in;
+# Rendered for v1.6.10 from facebook/idb's Source/.github/formulae/idb-cli.rb.in;
 # edit the template, not this file.
 
 class IdbCli < Formula
@@ -18,15 +18,15 @@ class IdbCli < Formula
   # there carries the same sha256 pinned below -- so this is a choice of
   # provenance rather than availability, and either source would install the
   # same bytes.
-  url "https://github.com/facebook/idb/releases/download/v1.6.9/fb_idb-1.6.9-py3-none-any.whl"
+  url "https://github.com/facebook/idb/releases/download/v1.6.10/fb_idb-1.6.10-py3-none-any.whl"
   # Kept in the release's own form so all three idb formulae carry one version.
-  version "1.6.9"
-  sha256 "400cbb1be23c407ec151d9eccbd1ed2a750d700dc6ac8dd05b7f25b43e97da17"
+  version "1.6.10"
+  sha256 "f6734d1f3dd0509a209934f20ea34b83fa855143689a71ad11bb34e02d943d76"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/facebook/idb/releases/download/v1.6.9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "d5e05db1cdc18195aa278277ff4923e59094d34655205170d5027415f541a0bb"
+    root_url "https://github.com/facebook/idb/releases/download/v1.6.10"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "7fd0e4a35428d0816a629b5522c8f0f3ad42c7db726f4d7055e3e542f9457900"
   end
 
   depends_on "python@3.14"
@@ -44,8 +44,8 @@ class IdbCli < Formula
   # for exactly this case). The url and sha256 match the main url, so
   # Homebrew downloads the artifact once.
   resource "fb-idb" do
-    url "https://github.com/facebook/idb/releases/download/v1.6.9/fb_idb-1.6.9-py3-none-any.whl"
-    sha256 "400cbb1be23c407ec151d9eccbd1ed2a750d700dc6ac8dd05b7f25b43e97da17"
+    url "https://github.com/facebook/idb/releases/download/v1.6.10/fb_idb-1.6.10-py3-none-any.whl"
+    sha256 "f6734d1f3dd0509a209934f20ea34b83fa855143689a71ad11bb34e02d943d76"
   end
 
   resource "aiofiles" do
