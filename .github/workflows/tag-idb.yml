@@ -1,0 +1,54 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Tags the commit that bumps idb to a release, so a SwiftPM consumer of this
+# repository's Package.swift can depend on a version of idb's libraries rather
+# than a revision.
+name: Tag idb releases
+
+on:
+  push:
+    branches: [main]
+    paths: [idb-release.json]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    name: Tag the idb release this commit carries
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Tag
+        run: |
+          set -euo pipefail
+          release=$(python3 -c 'import json; print(json.load(open("idb-release.json"))["tag"])')
+          # SwiftPM reads only semantic versions: v1.7.0 stays as it is, and a
+          # prerelease such as v1.5.0.b5 becomes v1.5.0-b5.
+          tag=$(printf '%s\n' "$release" | sed -E 's/^(v[0-9]+\.[0-9]+\.[0-9]+)\.((a|b|rc)[0-9]+)$/\1-\2/')
+          if ! printf '%s\n' "$tag" | grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+(-(a|b|rc)[0-9]+)?$'; then
+            echo "::error::idb-release.json names $release, which is not an idb release tag"
+            exit 1
+          fi
+          # A later bump of the same release (adding its bottle block) leaves the
+          # tag where it is: SwiftPM pins a version to the revision it first saw.
+          if git rev-parse --quiet --verify "refs/tags/$tag" >/dev/null; then
+            echo "$tag already tags $(git rev-parse --short "refs/tags/$tag^{commit}"); leaving it"
+            exit 0
+          fi
+          git tag "$tag" "$GITHUB_SHA"
+          git push origin "refs/tags/$tag"
+          echo "Tagged $GITHUB_SHA as $tag (idb $release)"

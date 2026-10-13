@@ -39,6 +39,26 @@ To upgrade software:
     brew upgrade fbthrift-compiler   # update just the thrift compiler
 
 
+Swift packages
+--------------
+
+This repository is also a Swift package offering [idb][idb]'s libraries
+(`FBSimulatorControl`, `FBDeviceControl`, and the rest), each a product made
+of the prebuilt XCFrameworks attached to an idb release. Its `Package.swift`
+is rendered for each release, like the idb formulae, and each idb release is
+tagged here (a prerelease such as `v1.5.0.b5` as `v1.5.0-b5`):
+
+    .package(url: "https://github.com/facebook/homebrew-fb", from: "1.7.0")
+
+and in a target's dependencies:
+
+    .product(name: "FBSimulatorControl", package: "homebrew-fb")
+
+The libraries need macOS 15. Their runtime resources (the simulator guests and
+shims) ship separately, in the release's `idb-libraries.macos-arm64.tar.gz`;
+idb's documentation covers where they go.
+
+
 Contributing
 ------------
 
@@ -86,6 +106,7 @@ References
 `brew help`, `man brew`, or the Homebrew [documentation][].
 
 [brew]: http://brew.sh/
+[idb]: https://github.com/facebook/idb
 [cla]: https://code.facebook.com/cla
 [style]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Formula-Cookbook.md
 [documentation]: https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme
