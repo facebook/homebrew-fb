@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-// Rendered for v1.7.2 by facebook/idb's .github/scripts/tap_formulae.py;
+// Rendered for v1.7.3 by facebook/idb's .github/scripts/tap_formulae.py;
 // each binary target is that release's asset. Edit nothing here.
 import PackageDescription
 
@@ -38,29 +38,29 @@ let package = Package(
     .library(name: "ZstdDecompress", targets: ["ZstdDecompress"]),
   ],
   targets: [
-    .binaryTarget(name: "AccessibilityPlatformTranslationStub", url: "https://github.com/facebook/idb/releases/download/v1.7.2/AccessibilityPlatformTranslationStub.xcframework.zip", checksum: "45d6f45dee81937131752b81932e8ea8af959468b7d5a6fac84ed58987568044"),
-    .binaryTarget(name: "CoreSimulatorStub", url: "https://github.com/facebook/idb/releases/download/v1.7.2/CoreSimulatorStub.xcframework.zip", checksum: "2109a5cbeb7a0358db4bdace0b605b0c36fb92ece202e5ab241888f41f588723"),
-    .binaryTarget(name: "FBArtifactStaging", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBArtifactStaging.xcframework.zip", checksum: "94f9758aa72309714a09c6f3f200f9fd71169ed4cf7386c4cc64bca44dfcd04d"),
-    .binaryTarget(name: "FBControlCore", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBControlCore.xcframework.zip", checksum: "a59b3d12fd2547cc00d8248ca61fc91c67f91b1a194e60469cd7a7276c0eca57"),
-    .binaryTarget(name: "FBControlCoreObjC", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBControlCoreObjC.xcframework.zip", checksum: "75258842df05e3c32aa5e0c522bb0af5f6b8c46e803c9e14f1cc524dc800b482"),
-    .binaryTarget(name: "FBDeviceControl", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBDeviceControl.xcframework.zip", checksum: "87577913712040281ac996e50f8abf54299d81b65f1185afbf203cfe5919d193"),
-    .binaryTarget(name: "FBProfilingCore", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBProfilingCore.xcframework.zip", checksum: "7c3c00190e933ea2517796c9af877a4ffab08e06e37445620b5f55d17009fe46"),
-    .binaryTarget(name: "FBSimulatorAX", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBSimulatorAX.xcframework.zip", checksum: "5ce21be98d15f9f2391b3096431437f3d0a06237ed5bfeb6ba2e18d9890fe6b9"),
-    .binaryTarget(name: "FBSimulatorBridgeProtocol", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBSimulatorBridgeProtocol.xcframework.zip", checksum: "e09f889c64b210fc1e137945f60ad73e88719859a6cba87897fc3b34eebe986c"),
-    .binaryTarget(name: "FBSimulatorCodeInjection", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBSimulatorCodeInjection.xcframework.zip", checksum: "3442471cdc3bdf0b3782f4bd875daaa9e6f07ded712b90fd60d64644a770fa59"),
-    .binaryTarget(name: "FBSimulatorControl", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBSimulatorControl.xcframework.zip", checksum: "a8b0b7d57bb382fd1a01bf44765fddd5ca4aa30348c921e17d9a869e7fff159d"),
-    .binaryTarget(name: "FBSimulatorProfiling", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBSimulatorProfiling.xcframework.zip", checksum: "fcefedd5719282ac2ceb6a57bfd85fbc07180b4d0a69d340e5892ad1849f6f26"),
-    .binaryTarget(name: "FBSimulatorVideo", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBSimulatorVideo.xcframework.zip", checksum: "d68f62058305ab5c02a0d3274186e7db989255f64cfea2432b0669dd40f43361"),
-    .binaryTarget(name: "FBSimulatorXCTest", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBSimulatorXCTest.xcframework.zip", checksum: "402965d81240390ffef9bcaad52d255cca9f6e125aef13a108495680b7026b55"),
-    .binaryTarget(name: "FBVideoCore", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBVideoCore.xcframework.zip", checksum: "b09a33fbd702c54d3144b15420bec3ede8e90c0297c90e68c2b2dbaafd1d029c"),
-    .binaryTarget(name: "FBXCTestCore", url: "https://github.com/facebook/idb/releases/download/v1.7.2/FBXCTestCore.xcframework.zip", checksum: "3b3281193982886a4aba192f092b96b8d89b066081c059f9b86348cda225279f"),
-    .binaryTarget(name: "IDBConcurrency", url: "https://github.com/facebook/idb/releases/download/v1.7.2/IDBConcurrency.xcframework.zip", checksum: "f8c661f0e799f4e25dcb866eb47d92f2161f399163b4a43c750f3a2922bfe4c4"),
-    .binaryTarget(name: "IDBPrivateHeaders", url: "https://github.com/facebook/idb/releases/download/v1.7.2/IDBPrivateHeaders.xcframework.zip", checksum: "ef309bea07611e428d8224ce3db43ff177e8cc4fde93d491a10a73cd5f8d6167"),
-    .binaryTarget(name: "IDBTelemetry", url: "https://github.com/facebook/idb/releases/download/v1.7.2/IDBTelemetry.xcframework.zip", checksum: "728b3f73668f1c93d45a4496bb34adef7938b4edf14effdc0c905130c7ce00e4"),
-    .binaryTarget(name: "ShimulatorAudioInjectionCore", url: "https://github.com/facebook/idb/releases/download/v1.7.2/ShimulatorAudioInjectionCore.xcframework.zip", checksum: "74f98f79d4cd1d9fe488f96fedcd899d6021a637057968b521d4d0c1656a2cd8"),
-    .binaryTarget(name: "ShimulatorProtocol", url: "https://github.com/facebook/idb/releases/download/v1.7.2/ShimulatorProtocol.xcframework.zip", checksum: "f0c39f71bc05d77b0834f29540334088813110ac95986c7b38986c0ab9179775"),
-    .binaryTarget(name: "SimScopeProtocol", url: "https://github.com/facebook/idb/releases/download/v1.7.2/SimScopeProtocol.xcframework.zip", checksum: "ad9f488613f4cd2cb98535f5d5dfa43812ec8d641fd412fbc8014239ccc30a61"),
-    .binaryTarget(name: "SimulatorIPC", url: "https://github.com/facebook/idb/releases/download/v1.7.2/SimulatorIPC.xcframework.zip", checksum: "3a5b2f28194f861ea29df101500d875ac8365bcd56d8d2f4282f63e1996f29d4"),
-    .binaryTarget(name: "ZstdDecompress", url: "https://github.com/facebook/idb/releases/download/v1.7.2/ZstdDecompress.xcframework.zip", checksum: "a504fd794af9f3acb31ee0ef3fd1f500a7194c71259c6496d37cc90b88f3b2da"),
+    .binaryTarget(name: "AccessibilityPlatformTranslationStub", url: "https://github.com/facebook/idb/releases/download/v1.7.3/AccessibilityPlatformTranslationStub.xcframework.zip", checksum: "60c4844f496a2468043bf69048c049f873160352a05acb8ec89cc54f374189d7"),
+    .binaryTarget(name: "CoreSimulatorStub", url: "https://github.com/facebook/idb/releases/download/v1.7.3/CoreSimulatorStub.xcframework.zip", checksum: "af4fa8fc07fb6075f9406486f7201998485e53cab0ccae75e2a0f58e00413bd8"),
+    .binaryTarget(name: "FBArtifactStaging", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBArtifactStaging.xcframework.zip", checksum: "f4a037283068e28256956c4a9a0d4429575a4848206234f3cbfc65d0d7f09f74"),
+    .binaryTarget(name: "FBControlCore", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBControlCore.xcframework.zip", checksum: "d1f64307213cd4d4cd5254f18114e39de2dbaf4c26b267b2da04d1f15e4a3cce"),
+    .binaryTarget(name: "FBControlCoreObjC", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBControlCoreObjC.xcframework.zip", checksum: "63f3b5b1d5b098adc3551e5107a211288e0ddb70cc8d10fa2c44733b57063bb3"),
+    .binaryTarget(name: "FBDeviceControl", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBDeviceControl.xcframework.zip", checksum: "64fd0d0f8c77587ceaa299def8e1f5bd976bb95c21c2f090907a6b52f41905ab"),
+    .binaryTarget(name: "FBProfilingCore", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBProfilingCore.xcframework.zip", checksum: "c069b934721d4451dffcac12b281f4d2040f3075536c41d447c9207c9b4b052b"),
+    .binaryTarget(name: "FBSimulatorAX", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBSimulatorAX.xcframework.zip", checksum: "06ee8bc1a8850cef6d5884f7be770e56f6a3362add91a929630716e0d639bba9"),
+    .binaryTarget(name: "FBSimulatorBridgeProtocol", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBSimulatorBridgeProtocol.xcframework.zip", checksum: "8fe0297b0002f7cfcb8c6f41e80b3172d18670f287fe1d37ae4b117ee0dbd23e"),
+    .binaryTarget(name: "FBSimulatorCodeInjection", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBSimulatorCodeInjection.xcframework.zip", checksum: "4d6b53d09b68b8f2bec7265ab044f357313c2e2c6fb54f82bde9728ab4be1939"),
+    .binaryTarget(name: "FBSimulatorControl", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBSimulatorControl.xcframework.zip", checksum: "683ed982b71cf82d8ff2d016f63a30864ae3c36affcebffbd6acd7ad9c6342af"),
+    .binaryTarget(name: "FBSimulatorProfiling", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBSimulatorProfiling.xcframework.zip", checksum: "4f73820ad9e083826c314e3493338ac217dc82b8e28e4fb4d0a033532008f4f3"),
+    .binaryTarget(name: "FBSimulatorVideo", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBSimulatorVideo.xcframework.zip", checksum: "7b1cb6d09985edd234c2f045d4370f9060303b01df573d24cb931d32e57886ee"),
+    .binaryTarget(name: "FBSimulatorXCTest", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBSimulatorXCTest.xcframework.zip", checksum: "f4daff8e5099acba476e8bca2f4b50e5097f0635298803d700a7f0b1b041181d"),
+    .binaryTarget(name: "FBVideoCore", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBVideoCore.xcframework.zip", checksum: "5382c4fc2e4444f8c521baafcbf91a8b2df6dc2b39654f014011ac6cef27c108"),
+    .binaryTarget(name: "FBXCTestCore", url: "https://github.com/facebook/idb/releases/download/v1.7.3/FBXCTestCore.xcframework.zip", checksum: "85ccba0ae07a545ddd50e90673acff477d67458cf406cf478c2025e8e0ba4cc4"),
+    .binaryTarget(name: "IDBConcurrency", url: "https://github.com/facebook/idb/releases/download/v1.7.3/IDBConcurrency.xcframework.zip", checksum: "e340dffa868cb39038a6c64d8647fcf5050210983a01d5ef12ad929658023786"),
+    .binaryTarget(name: "IDBPrivateHeaders", url: "https://github.com/facebook/idb/releases/download/v1.7.3/IDBPrivateHeaders.xcframework.zip", checksum: "95c889e63c805b0dfddfd5dabc7976b3eca54223677c63660c95ae5bc73110f1"),
+    .binaryTarget(name: "IDBTelemetry", url: "https://github.com/facebook/idb/releases/download/v1.7.3/IDBTelemetry.xcframework.zip", checksum: "18bf21a5293d24fa00bb6d696e784598090d3f7c24d83b827dc3475d52f5fb74"),
+    .binaryTarget(name: "ShimulatorAudioInjectionCore", url: "https://github.com/facebook/idb/releases/download/v1.7.3/ShimulatorAudioInjectionCore.xcframework.zip", checksum: "5e8318887e0086eadc1ab33f0823339cf33b9fcb81c019200dc88187b1999330"),
+    .binaryTarget(name: "ShimulatorProtocol", url: "https://github.com/facebook/idb/releases/download/v1.7.3/ShimulatorProtocol.xcframework.zip", checksum: "c24e44d564fc9b19bbce79b54f39bac40ed2abaf06a1f8dd25dc929f69922bf2"),
+    .binaryTarget(name: "SimScopeProtocol", url: "https://github.com/facebook/idb/releases/download/v1.7.3/SimScopeProtocol.xcframework.zip", checksum: "7ecdc99a56223e8c1a7c20cad0ba4dfe0bd5a1a3585da4cda62a85fb99da2555"),
+    .binaryTarget(name: "SimulatorIPC", url: "https://github.com/facebook/idb/releases/download/v1.7.3/SimulatorIPC.xcframework.zip", checksum: "b6f0d06b081c247e06f1924db230dbab4b49e021de30457732a88206643d23b1"),
+    .binaryTarget(name: "ZstdDecompress", url: "https://github.com/facebook/idb/releases/download/v1.7.3/ZstdDecompress.xcframework.zip", checksum: "64c0e3d3a73a6ed1de7a301cb67096445b126b07771bc0d52ae356d6c897aea2"),
   ]
 )

@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-# Rendered for v1.7.2 from facebook/idb's Source/.github/formulae/idb-cli.rb.in;
+# Rendered for v1.7.3 from facebook/idb's Source/.github/formulae/idb-cli.rb.in;
 # edit the template, not this file.
 
 class IdbCli < Formula
@@ -18,16 +18,16 @@ class IdbCli < Formula
   # there carries the same sha256 pinned below -- so this is a choice of
   # provenance rather than availability, and either source would install the
   # same bytes.
-  url "https://github.com/facebook/idb/releases/download/v1.7.2/fb_idb-1.7.2-py3-none-any.whl"
+  url "https://github.com/facebook/idb/releases/download/v1.7.3/fb_idb-1.7.3-py3-none-any.whl"
   # Only a prerelease spells out its version, in the release's own dotted form
   # rather than the wheel's PEP 440 one, so all three idb formulae carry one
   # version. A stable version is the one Homebrew scans from the url.
-  sha256 "d02b09b45c71279534929ae997aadf2b043238d1cfb140fb57f954d89d0e2920"
+  sha256 "b3933fa86c2499e446dc2e06f2fd475737c41a4a99fc1782bf32cd7133b2a29e"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/facebook/idb/releases/download/v1.7.2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "af071e367037c78db0a801f8c8eda79b0b1b0aaf4eb2e63dac4e6414fb8d7172"
+    root_url "https://github.com/facebook/idb/releases/download/v1.7.3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "9f3948b80dc49f5e80b66dd75267f83607d86d0e40d1ee7324c4fd1fb401a227"
   end
 
   depends_on "python@3.14"
@@ -45,8 +45,8 @@ class IdbCli < Formula
   # for exactly this case). The url and sha256 match the main url, so
   # Homebrew downloads the artifact once.
   resource "fb-idb" do
-    url "https://github.com/facebook/idb/releases/download/v1.7.2/fb_idb-1.7.2-py3-none-any.whl"
-    sha256 "d02b09b45c71279534929ae997aadf2b043238d1cfb140fb57f954d89d0e2920"
+    url "https://github.com/facebook/idb/releases/download/v1.7.3/fb_idb-1.7.3-py3-none-any.whl"
+    sha256 "b3933fa86c2499e446dc2e06f2fd475737c41a4a99fc1782bf32cd7133b2a29e"
   end
 
   resource "aiofiles" do
