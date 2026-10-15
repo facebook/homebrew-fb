@@ -1,42 +1,42 @@
 {
-  "asset_base": "https://github.com/facebook/idb/releases/download/v1.7.1",
+  "asset_base": "https://github.com/facebook/idb/releases/download/v1.7.2",
   "bottle_blocks": {
-    "idb-cli.rb": "  bottle do\n    root_url \"https://github.com/facebook/idb/releases/download/v1.7.1\"\n    sha256 cellar: :any_skip_relocation, arm64_tahoe: \"fd84811b1017dafc53f7480f386222aaeaae79147c88316a4296c1a9b3ba62b5\"\n  end"
+    "idb-cli.rb": "  bottle do\n    root_url \"https://github.com/facebook/idb/releases/download/v1.7.2\"\n    sha256 cellar: :any_skip_relocation, arm64_tahoe: \"af071e367037c78db0a801f8c8eda79b0b1b0aaf4eb2e63dac4e6414fb8d7172\"\n  end"
   },
-  "companion_sha256": "1ad89c98448465880bb2906ba64c395e0f27dfb801d8525a88964b4a180a7383",
+  "companion_sha256": "d6d7a7cf7e4a4b804c31cd084850ee6524d5a8dc56f0ebedc5a19abaadd5457f",
   "outputs": {
-    "Package.swift": "9726de6b962afba993de558e40184ab2c53642191e3c3326cd2d733cf82950d3",
-    "idb-cli.rb": "a6d37a508a07646ea4b28c256baa5b1262840fccc7da42ff1177e8c918252552",
-    "idb-companion.rb": "642af86bfea4a71369117a13b6b795da9a22a947263520e23039a497238a2984",
-    "idb.rb": "f128689c3f02a8f5c3e11dde6fed3cd9ebb7ee707ebad97eb52e6b7a72c5d9f3"
+    "Package.swift": "902bc1f039728615f91f898d3fcd56a98427e6dc409eaeeb7aac55b57eea0e2f",
+    "idb-cli.rb": "0a78d42d299b872eca69b4a51edebb588fd09214106a374a72d4d3082fb86dbf",
+    "idb-companion.rb": "078ae50c35db4342df6dc6df360fdae768b6d5c11b25d60a490a5e1ec2b537e2",
+    "idb.rb": "9f44bf1e0cdd6a4df9150e681ade599fb1b2dadfdab70acc78a352db694d1b1e"
   },
-  "run_url": "https://github.com/facebook/idb/actions/runs/38582175446",
+  "run_url": "https://github.com/facebook/idb/actions/runs/38630259629",
   "swiftpm": {
     "checksums": {
-      "AccessibilityPlatformTranslationStub": "77754ce4f36cf229e67bc2338f2466c78089c264d56dae85dfa69f3aa5f90578",
-      "CoreSimulatorStub": "86fd21a9cac4719ba8747622c47a8a2fad3d4301955dad9d6f217528f14757d5",
-      "FBArtifactStaging": "ad704b94c03b976f23d6d23e12e5a5707b683d3c89ac3cfc6ac4995eb6ed6599",
-      "FBControlCore": "7b402f6e2218504d335c97dbf2115828d2ceee9b544f3adc6bc804027b69ef74",
-      "FBControlCoreObjC": "0461444d2800f2818f222735aea9a6ac5a3aa137cdab0302e4cdfe7978f6d614",
-      "FBDeviceControl": "9196205cf069d6ffda42a55ac4124ad488da4b9f80642052d7308a7499e41781",
-      "FBProfilingCore": "28e55561071cd8c390e509e13b94fce11297c4131a8621cfae89922507f2b76b",
-      "FBSimulatorAX": "8d818bcb59852643f3f6060280dddb7b9f08b37b3e8932bbebb11336c94be616",
-      "FBSimulatorBridgeProtocol": "0f01911028b9cbb78c2f6d58d26e13319c28c4b969ed5bcb78dc94df1713758e",
-      "FBSimulatorCodeInjection": "1cac6235278a8fced0d67a21b71d4a23abbf1c9cf807ec788c985f7eb0d5cc4d",
-      "FBSimulatorControl": "2f7d7ce8340fcaa3550e461fb74667b7c84e2a7a288c5152c305ada7aad8b745",
-      "FBSimulatorProfiling": "be32eb3ac889f665678a986836a90e90768c9b469e3812eb48ce09af21a909b9",
-      "FBSimulatorVideo": "3bb82d50901717c85dbcb44cd85dfabe31669aee47ad036cf9d458bc6e978db2",
-      "FBSimulatorXCTest": "df908832e7084f982a414788814409a2de4a69be92df28cd8ea490163a3c1c42",
-      "FBVideoCore": "ad3b87bbaeb5c478d6675012240c9c1d9317a4a9c72e3ce7b167440e4a5bdbff",
-      "FBXCTestCore": "64cc3f3fd2a240cef42bb5654fa667eea190a883171180a264634fcf67720dbc",
-      "IDBConcurrency": "8c13a6cfd0ecbef4c8d037df010294b0aa0428b3202c8d7da63575591a91b2a0",
-      "IDBPrivateHeaders": "75e5f0c2ea919037304e634e1b7aae6eb0dd11b2e6555f5eca0c97c5031706e0",
-      "IDBTelemetry": "e9e062238c6312e557f019ffc3f26bf33b18390d8a6ed043c9d12be9b80992ce",
-      "ShimulatorAudioInjectionCore": "601b3a7117507a6efd9d4ad1df2faf1a3c93cd50497249c4a2ac48e4642e7b00",
-      "ShimulatorProtocol": "b6510c6c783730ff751b1594b6f67df77b20821506c98c4b56428ec968bfc908",
-      "SimScopeProtocol": "565821eee4969d6af34e5a00280d85b173563bc4f816c476ea2688034cc2c990",
-      "SimulatorIPC": "2e2c06ed120bc9a5662eb93584ae4fbe1d96257231207a273357cee96fdbbd6e",
-      "ZstdDecompress": "dea748fd85b86c8c0fc34e7c3c1973a3aa2c2436ee3db59f8d4b4724f18e8265"
+      "AccessibilityPlatformTranslationStub": "45d6f45dee81937131752b81932e8ea8af959468b7d5a6fac84ed58987568044",
+      "CoreSimulatorStub": "2109a5cbeb7a0358db4bdace0b605b0c36fb92ece202e5ab241888f41f588723",
+      "FBArtifactStaging": "94f9758aa72309714a09c6f3f200f9fd71169ed4cf7386c4cc64bca44dfcd04d",
+      "FBControlCore": "a59b3d12fd2547cc00d8248ca61fc91c67f91b1a194e60469cd7a7276c0eca57",
+      "FBControlCoreObjC": "75258842df05e3c32aa5e0c522bb0af5f6b8c46e803c9e14f1cc524dc800b482",
+      "FBDeviceControl": "87577913712040281ac996e50f8abf54299d81b65f1185afbf203cfe5919d193",
+      "FBProfilingCore": "7c3c00190e933ea2517796c9af877a4ffab08e06e37445620b5f55d17009fe46",
+      "FBSimulatorAX": "5ce21be98d15f9f2391b3096431437f3d0a06237ed5bfeb6ba2e18d9890fe6b9",
+      "FBSimulatorBridgeProtocol": "e09f889c64b210fc1e137945f60ad73e88719859a6cba87897fc3b34eebe986c",
+      "FBSimulatorCodeInjection": "3442471cdc3bdf0b3782f4bd875daaa9e6f07ded712b90fd60d64644a770fa59",
+      "FBSimulatorControl": "a8b0b7d57bb382fd1a01bf44765fddd5ca4aa30348c921e17d9a869e7fff159d",
+      "FBSimulatorProfiling": "fcefedd5719282ac2ceb6a57bfd85fbc07180b4d0a69d340e5892ad1849f6f26",
+      "FBSimulatorVideo": "d68f62058305ab5c02a0d3274186e7db989255f64cfea2432b0669dd40f43361",
+      "FBSimulatorXCTest": "402965d81240390ffef9bcaad52d255cca9f6e125aef13a108495680b7026b55",
+      "FBVideoCore": "b09a33fbd702c54d3144b15420bec3ede8e90c0297c90e68c2b2dbaafd1d029c",
+      "FBXCTestCore": "3b3281193982886a4aba192f092b96b8d89b066081c059f9b86348cda225279f",
+      "IDBConcurrency": "f8c661f0e799f4e25dcb866eb47d92f2161f399163b4a43c750f3a2922bfe4c4",
+      "IDBPrivateHeaders": "ef309bea07611e428d8224ce3db43ff177e8cc4fde93d491a10a73cd5f8d6167",
+      "IDBTelemetry": "728b3f73668f1c93d45a4496bb34adef7938b4edf14effdc0c905130c7ce00e4",
+      "ShimulatorAudioInjectionCore": "74f98f79d4cd1d9fe488f96fedcd899d6021a637057968b521d4d0c1656a2cd8",
+      "ShimulatorProtocol": "f0c39f71bc05d77b0834f29540334088813110ac95986c7b38986c0ab9179775",
+      "SimScopeProtocol": "ad9f488613f4cd2cb98535f5d5dfa43812ec8d641fd412fbc8014239ccc30a61",
+      "SimulatorIPC": "3a5b2f28194f861ea29df101500d875ac8365bcd56d8d2f4282f63e1996f29d4",
+      "ZstdDecompress": "a504fd794af9f3acb31ee0ef3fd1f500a7194c71259c6496d37cc90b88f3b2da"
     },
     "products": {
       "FBArtifactStaging": [
@@ -171,6 +171,6 @@
       ]
     }
   },
-  "tag": "v1.7.1",
-  "wheel_sha256": "84cbff2f25670d30b3562e377e40d264f6078158a1ec4bd17688208f767e807c"
+  "tag": "v1.7.2",
+  "wheel_sha256": "d02b09b45c71279534929ae997aadf2b043238d1cfb140fb57f954d89d0e2920"
 }
