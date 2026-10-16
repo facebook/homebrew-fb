@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-# Rendered for v1.7.3 from facebook/idb's Source/.github/formulae/idb.rb.in;
+# Rendered for v1.7.4 from facebook/idb's Source/.github/formulae/idb.rb.in;
 # edit the template, not this file.
 
 class Idb < Formula
@@ -15,8 +15,8 @@ class Idb < Formula
   # tarball, so Homebrew dedupes the download and this formula costs nothing of
   # its own beyond a 25KB README. Keep the url and sha256 in step with
   # idb-cli.rb or that dedup is silently lost.
-  url "https://github.com/facebook/idb/releases/download/v1.7.3/fb_idb-1.7.3-py3-none-any.whl"
-  sha256 "b3933fa86c2499e446dc2e06f2fd475737c41a4a99fc1782bf32cd7133b2a29e"
+  url "https://github.com/facebook/idb/releases/download/v1.7.4/fb_idb-1.7.4-py3-none-any.whl"
+  sha256 "dcfaf6966dc50230dff6a6c056221a5bdd9c9cf4d61c84c1ab000efe12307c07"
   license "MIT"
 
   # idb is normally used as a pair: the CLI talks to a companion, and the
