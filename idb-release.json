@@ -7,7 +7,7 @@
   "outputs": {
     "Package.swift": "e14d0c61a6ba23089e2bfd6cc51b5cc577afc12c1f670c4ab152a0c3156f41b8",
     "idb-cli.rb": "021723206f2216185461b3eeaeb1a60dd4b044eaf6dcffb2348cd381c8799a0d",
-    "idb-companion.rb": "67f33ef4603318260d345f66a042b08c401c4f0d94a3f5a8f3524d91920865fd",
+    "idb-companion.rb": "2c4b9436d90ceda20ec9484f742071d10dd0381c37091bd23cddc4fbfb94cc53",
     "idb.rb": "6803bd18d98b5eb9fe06c6d9158ade9cf8b2e979af0728547d84c173d6c57a5a"
   },
   "run_url": "https://github.com/facebook/idb/actions/runs/38770723596",
